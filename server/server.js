@@ -1,5 +1,6 @@
 const Koa = require('koa');
 const Router = require('koa-router');
+const cors = require('koa-cors');
 const R = require('ramda');
 const todoList = require('./todoList');
 
@@ -26,9 +27,8 @@ router
     });
 
 app
+    .use(cors())
     .use(router.routes())
     .use(router.allowedMethods());
 
 app.listen(config.port);
-
-console.log(`Server is now running on port ${ config.port }`);

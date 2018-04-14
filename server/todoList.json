@@ -33,6 +33,34 @@
         "details": "Server directory will contain all server-side code. Server.js contains the server launch script."
       }
     ],
+    "status": "COMPLETE"
+  },
+  {
+    "id": "todo-3",
+    "title": "Make a call",
+    "goal": "Integrate front-end with backend",
+    "steps": [
+      {
+        "id": "todo-3-step-1",
+        "title": "Add cors capabilities to backend",
+        "details": "Add koa-cors library and apply it in the backend"
+      },
+      {
+        "id": "todo-3-step-2",
+        "title": "Wrap fetch",
+        "details": "Wrap fetch api with request method that will do the proper set up for fetch calls"
+      },
+      {
+        "id": "todo-3-step-3",
+        "title": "Add ApiService",
+        "details": "ApiService should expose specific methods to retrieve data, hiding the details of the calls"
+      },
+      {
+        "id": "todo-3-step-4",
+        "title": "Make a test call",
+        "details": "Call the backend from the App component, updating it's state when the promise is resolved"
+      }
+    ],
     "status": "IN_PROGRESS"
   }
 ]
