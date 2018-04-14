@@ -1,0 +1,38 @@
+[
+  {
+    "id": "todo-1",
+    "title": "Initialise the repo",
+    "goal": "Get a working repo with all scripts set up for development",
+    "steps": [
+      {
+        "id": "todo-1-step-1",
+        "title": "Install create-react-app",
+        "details": "Run 'yarn global add create-react-app' from your console"
+      },
+      {
+        "id": "todo-1-step-2",
+        "title": "Initialise the repo",
+        "details": "Go to directory and run 'create-react-app todoapp --scripts-version=react-scripts-ts' to initialise the repo in todoapp folder"
+      }
+    ],
+    "status": "COMPLETE"
+  },
+  {
+    "id": "todo-2",
+    "title": "Simple koa backend",
+    "goal": "Introduce a simple mock backend that will emulate the work of a real backend",
+    "steps": [
+      {
+        "id": "todo-2-step-1",
+        "title": "Add necessary libraries",
+        "details": "Add koa, koa-router and nodemon to the project"
+      },
+      {
+        "id": "todo-2-step-2",
+        "title": "Create 'server' directory",
+        "details": "Server directory will contain all server-side code. Server.js contains the server launch script."
+      }
+    ],
+    "status": "IN_PROGRESS"
+  }
+]
