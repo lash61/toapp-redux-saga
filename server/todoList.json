@@ -61,6 +61,34 @@
         "details": "Call the backend from the App component, updating it's state when the promise is resolved"
       }
     ],
+    "status": "COMPLETE"
+  },
+  {
+    "id": "todo-4",
+    "title": "Redux store and Routing",
+    "goal": "Introduce redux store to properly manage data in the app",
+    "steps": [
+      {
+        "id": "todo-4-step-1",
+        "title": "Add necessary redux libraries with devtools support",
+        "details": "Add redux, react-redux, redux-thunk, and redux-devtools-extension"
+      },
+      {
+        "id": "todo-4-step-1",
+        "title": "Add necessary routing libraries",
+        "details": "Add react-router and react-router-redux"
+      },
+      {
+        "id": "todo-4-step-3",
+        "title": "Create rootReducer",
+        "details": "Use combine reducers to initialize rootReducer, make it aware of routing"
+      },
+      {
+        "id": "todo-4-step-4",
+        "title": "Initialise the store",
+        "details": "Write a function that will initialise redux middlewares, store enhancers and create the actual store"
+      }
+    ],
     "status": "IN_PROGRESS"
   }
 ]
