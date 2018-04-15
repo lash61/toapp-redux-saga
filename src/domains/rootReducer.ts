@@ -3,8 +3,11 @@ import {combineReducers} from 'redux';
 
 import {IAppState} from './types';
 
+import todosReducer from 'domains/todos/todosReducer';
+
 const rootReducer = combineReducers<IAppState>({
-    routing: routerReducer
+    routing: routerReducer,
+    todosState: todosReducer
 });
 
 export default rootReducer;

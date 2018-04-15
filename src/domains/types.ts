@@ -1,7 +1,14 @@
 import {RouterState} from 'react-router-redux';
+import {LoadingStates} from './loadingStates';
 
 export interface IAppState {
-    routing: RouterState
+    routing: RouterState,
+    todosState: ITodosState
+}
+
+export interface ITodosState {
+    loadingState: LoadingStates,
+    todos: ITodo[]
 }
 
 export enum TodoStatus {

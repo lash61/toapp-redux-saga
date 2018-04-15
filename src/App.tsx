@@ -3,25 +3,11 @@ import './App.css';
 
 import logo from './logo.svg';
 
-import {ITodo} from 'domains/types';
-import apiFactory from 'service/api';
-
-interface IAppComponentState extends React.ComponentState {
-    todos: ITodo[];
+interface IProps {
+    children: React.ReactChild
 }
 
-class App extends React.Component {
-
-    public state: IAppComponentState = {
-        todos: []
-    };
-
-    public componentDidMount() {
-        const api = apiFactory();
-        api.loadTodoList().then((todos: ITodo[]) => {
-            this.setState(() => ({todos}));
-        });
-    }
+class App extends React.Component<IProps> {
 
     public render() {
         return (
@@ -33,7 +19,7 @@ class App extends React.Component {
                 <p className="App-intro">
                     To get started, edit <code>src/App.tsx</code> and save to reload.
                 </p>
-                {JSON.stringify(this.state.todos)}
+                {this.props.children}
             </div>
         );
     }

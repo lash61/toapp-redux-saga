@@ -89,6 +89,34 @@
         "details": "Write a function that will initialise redux middlewares, store enhancers and create the actual store"
       }
     ],
+    "status": "COMPLETE"
+  },
+  {
+    "id": "todo-5",
+    "title": "Put some data on the store and display it in a connected component",
+    "goal": "The App component will no longer require private state if data is moved to the store",
+    "steps": [
+      {
+        "id": "todo-5-step-1",
+        "title": "Model todos state",
+        "details": "Todos state will need to handle loading indicator and the actual data. Show this in your types."
+      },
+      {
+        "id": "todo-5-step-2",
+        "title": "Create todos actions enum and todos reducer",
+        "details": "Using combineReducers the update of each individual field on the state can be simplified"
+      },
+      {
+        "id": "todo-5-step-3",
+        "title": "Write the loadTodos function",
+        "details": "The loadTodos action will handle the async call to the backend and dispatch multiple actions"
+      },
+      {
+        "id": "todo-5-step-4",
+        "title": "Create TodosContainer - connected component",
+        "details": "TodosContainer should actually execute call to the server in componentDidMount() and display the retrieved data."
+      }
+    ],
     "status": "IN_PROGRESS"
   }
 ]

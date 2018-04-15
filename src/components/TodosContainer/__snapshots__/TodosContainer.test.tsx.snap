@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodosContainer renders a component 1`] = `
+<div>
+  [{"goal":"Goal","id":"some-id","status":"NOT_STARTED","steps":[],"title":"Title"}]
+</div>
+`;
