@@ -1,7 +1,6 @@
-import {AnyAction, Dispatch} from 'redux';
+import {ActionCreator, AnyAction} from 'redux';
 
-import {IAppState, ITodo} from 'domains/types';
-import apiFactory from 'service/api';
+import {ITodo} from 'domains/types';
 
 export enum TodosActions {
     LOAD_TODOS = 'LOAD_TODOS',
@@ -10,24 +9,25 @@ export enum TodosActions {
     LOAD_TODOS_ERROR = 'LOAD_TODOS_ERROR',
 }
 
-const api = apiFactory();
+export interface ILoadTodosSuccessAction extends AnyAction {
+    payload: ITodo[];
+}
 
-export const loadTodos = () => (dispatch: Dispatch<IAppState>): Promise<AnyAction> => {
-    dispatch({type: TodosActions.LOAD_TODOS_PENDING});
-
-    return api.loadTodoList()
-        .then((todos: ITodo[]) => {
-            return dispatch({
-                payload: todos,
-                type: TodosActions.LOAD_TODOS_SUCCESS
-            });
-        })
-        .catch((err) => {
-            console.log('store err', dispatch);
-            return dispatch({
-                type: TodosActions.LOAD_TODOS_ERROR
-            });
-        });
+export const loadTodos: ActionCreator<AnyAction> = () => {
+    return {type: TodosActions.LOAD_TODOS};
 };
 
+export const loadTodosPending: ActionCreator<AnyAction> = () => {
+    return {type: TodosActions.LOAD_TODOS_PENDING};
+};
 
+export const loadTodosSuccess: ActionCreator<ILoadTodosSuccessAction> = (todos: ITodo[]) => {
+    return {
+        payload: todos,
+        type: TodosActions.LOAD_TODOS_SUCCESS
+    };
+};
+
+export const loadTodosError: ActionCreator<AnyAction> = () => {
+    return {type: TodosActions.LOAD_TODOS_ERROR};
+};

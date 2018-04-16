@@ -1,13 +1,13 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
-import {AnyAction} from 'redux';
+import {ActionCreator, AnyAction} from 'redux';
 
 import * as todosActions from 'domains/todos/todosActions';
 import {IAppState, ITodo} from 'domains/types';
 
 interface IProps {
     todos: ITodo[],
-    loadTodos: () => () => Promise<AnyAction>
+    loadTodos: ActionCreator<AnyAction>
 }
 
 export class TodosContainer extends React.Component<IProps> {
