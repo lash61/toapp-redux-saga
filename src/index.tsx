@@ -9,14 +9,17 @@ import {Store} from 'redux';
 import initStore from 'domains/initStore';
 import {IAppState} from 'domains/types';
 
-import createRouter from './createRouter';
+import RouterComponent from 'components/RouterRocmonent/RouterComponent';
+
 import './index.css';
 
 const store: Store<IAppState> = initStore();
 const history: History = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
-    <Provider store={store}>{createRouter(history)}</Provider>,
+    <Provider store={store}>
+        <RouterComponent history={history}/>
+    </Provider>,
     document.getElementById('root') as HTMLElement
 );
 

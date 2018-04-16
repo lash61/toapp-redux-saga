@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RouterComponent renders a component 1`] = `
+<Router
+  history={Object {}}
+  render={[Function]}
+>
+  <Route
+    component={[Function]}
+    path="/"
+  >
+    <Route
+      component={[Function]}
+      path="todos"
+    />
+  </Route>
+</Router>
+`;
