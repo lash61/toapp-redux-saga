@@ -1,12 +1,11 @@
 import {AnyAction} from 'redux';
 import {call, put, takeLatest} from 'redux-saga/effects';
 
+import {IApiService} from "service/api";
 import {IServiceMap} from 'service/services';
 import {loadTodosError, loadTodosPending, loadTodosSuccess, TodosActions} from './todosActions';
 
-export const loadTodos = (serviceMap: IServiceMap) => function* (action: AnyAction) {
-    const {apiService} = serviceMap;
-
+export function* loadTodos(apiService: IApiService, action: AnyAction) {
     yield put(loadTodosPending());
 
     try {
@@ -15,10 +14,10 @@ export const loadTodos = (serviceMap: IServiceMap) => function* (action: AnyActi
     } catch (e) {
         yield put(loadTodosError());
     }
-};
+}
 
 function* todosSaga(serviceMap: IServiceMap) {
-    yield takeLatest(TodosActions.LOAD_TODOS, loadTodos(serviceMap));
+    yield takeLatest(TodosActions.LOAD_TODOS, loadTodos, serviceMap.apiService);
 }
 
 export default todosSaga;

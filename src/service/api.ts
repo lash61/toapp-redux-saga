@@ -17,8 +17,6 @@ const request = (method: RequestMethods, resource: string, body?: string) => {
         mode: 'cors'
     }).then((response: Response) => {
         return response.json();
-    }).catch((error: any) => {
-       console.error(error);
     });
 };
 
