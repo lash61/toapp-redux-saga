@@ -117,6 +117,34 @@
         "details": "TodosContainer should actually execute call to the server in componentDidMount() and display the retrieved data."
       }
     ],
+    "status": "COMPLETE"
+  },
+  {
+    "id": "todo-6",
+    "title": "Introduce redux sagas",
+    "goal": "Introduce a framework for effects management",
+    "steps": [
+      {
+        "id": "todo-6-step-1",
+        "title": "Add necessary library",
+        "details": "Run 'yarn add redux-saga' in the command line"
+      },
+      {
+        "id": "todo-6-step-2",
+        "title": "Enhance the store with saga middleware",
+        "details": "Redux-saga library provides createSagaMiddleware method. "
+      },
+      {
+        "id": "todo-6-step-3",
+        "title": "Introduce the root saga",
+        "details": "Introduce the single point of entry for all sagas. Don't forget to call sagaMiddleware.run(rootSaga)."
+      },
+      {
+        "id": "todo-6-step-4",
+        "title": "Implement todosSaga saga and attach it to rootSaga",
+        "details": "This saga will dispatch several actions while handling the call to the backed to retrieve todos"
+      }
+    ],
     "status": "IN_PROGRESS"
   }
 ]
