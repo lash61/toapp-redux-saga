@@ -1,11 +1,10 @@
-import {AnyAction} from 'redux';
 import {call, put, takeLatest} from 'redux-saga/effects';
 
 import {IApiService} from "service/api";
 import {IServiceMap} from 'service/services';
 import {loadTodosError, loadTodosPending, loadTodosSuccess, TodosActions} from './todosActions';
 
-export function* loadTodos(apiService: IApiService, action: AnyAction) {
+export function* loadTodos(apiService: IApiService) {
     yield put(loadTodosPending());
 
     try {

@@ -1,49 +1,54 @@
-import {lensPath, view} from 'ramda';
+import {Action} from 'redux';
+import {runSaga, RunSagaOptions} from 'redux-saga';
 
+import {IAppState, ITodo} from 'domains/types';
 import {IApiService} from 'service/api';
 
-import {ITodo, TodoStatus} from 'domains/types';
+import {loadTodosError, loadTodosPending, loadTodosSuccess} from './todosActions';
 
-import {loadTodosError, loadTodosPending, loadTodosSuccess, TodosActions} from './todosActions';
 import {loadTodos} from './todosSaga';
-
-const PUT = view(lensPath(['value', 'PUT', 'action']));
-const CALL = view(lensPath(['value', 'CALL', 'fn']));
 
 describe('loadTodos', () => {
 
+    let dispatched: Action[] = [];
+    const storeInterface: RunSagaOptions<Action, IAppState> = {
+        dispatch: (action) => dispatched.push(action),
+    };
+
     let apiService: IApiService;
+
     beforeEach(() => {
+        dispatched = [];
+
         apiService = {
             loadTodo: jest.fn(),
             loadTodoList: jest.fn()
         };
     });
 
-    it('runs successful scenario', () => {
-        const iterator = loadTodos(apiService, {type: TodosActions.LOAD_TODOS});
-        expect(PUT(iterator.next())).toEqual(loadTodosPending());
-        expect(CALL(iterator.next())).toBe(apiService.loadTodoList);
-        const todos: ITodo[] = [{
-            goal: 'some goal',
-            id: 'id',
-            status: TodoStatus.NOT_STARTED,
-            steps: [],
-            title: 'title'
-        }];
-        expect(PUT(iterator.next(todos))).toEqual(loadTodosSuccess(todos));
-        expect(iterator.next().done).toBe(true);
+    it('executes scenario with a successful response', async () => {
+        const returnedTodos: ITodo[] = [];
+        apiService.loadTodoList = jest.fn(() => Promise.resolve(returnedTodos));
+
+        await runSaga(storeInterface, loadTodos, apiService as IApiService).done;
+
+        expect(apiService.loadTodoList).toHaveBeenCalled();
+
+        expect(dispatched.length).toBe(2);
+        expect(dispatched[0]).toEqual(loadTodosPending());
+        expect(dispatched[1]).toEqual(loadTodosSuccess(returnedTodos));
     });
 
-    //TODO: how do I simulate an error?
-    it('runs scenario with an error',() => {
-        const iterator = loadTodos(apiService, {type: TodosActions.LOAD_TODOS});
-        expect(PUT(iterator.next())).toEqual(loadTodosPending());
-        expect(CALL(iterator.next())).toBe(apiService.loadTodoList);
+    it('executes scenario with a failed response', async () => {
+        apiService.loadTodoList = jest.fn(() => Promise.reject('Error!'));
 
-        expect(PUT(iterator.next())).toEqual(loadTodosError())
+        await runSaga(storeInterface, loadTodos, apiService as IApiService).done;
 
-        expect(iterator.next().done).toBe(true);
+        expect(apiService.loadTodoList).toHaveBeenCalled();
+
+        expect(dispatched.length).toBe(2);
+        expect(dispatched[0]).toEqual(loadTodosPending());
+        expect(dispatched[1]).toEqual(loadTodosError());
     });
 
 });
