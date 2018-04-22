@@ -8,11 +8,6 @@ import {rem} from 'components/Styled/utils';
 
 import logo from './logo.svg';
 
-export interface IProps {
-    loadingState: LoadingStates,
-    children: React.ReactChildren | React.ReactChild
-}
-
 const Outer = styled.div`
     position: relative;
     min-height: ${ rem(100)};
@@ -48,6 +43,11 @@ const Logo = styled.img`
     }
 `;
 Logo.displayName = 'Logo';
+
+export interface IProps {
+    loadingState: LoadingStates,
+    children: React.ReactChildren | React.ReactChild
+}
 
 const LoadingIndicator: React.SFC<IProps> = (props) => {
     return (

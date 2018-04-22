@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TogoList renders a component 1`] = `
+<Wrapper>
+  <TodoCard
+    todo={
+      Object {
+        "goal": "First goal description",
+        "id": "first-id",
+        "status": "COMPLETE",
+        "steps": Array [],
+        "title": "First todo title",
+      }
+    }
+  />
+  <TodoCard
+    todo={
+      Object {
+        "goal": "Second goal description",
+        "id": "second-id",
+        "status": "COMPLETE",
+        "steps": Array [],
+        "title": "Second todo title",
+      }
+    }
+  />
+</Wrapper>
+`;

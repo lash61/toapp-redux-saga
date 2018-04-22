@@ -7,6 +7,7 @@ import * as todosActions from 'domains/todos/todosActions';
 import {IAppState, ITodo} from 'domains/types';
 
 import LoadingIndicator from 'components/LoadingIndicator/LoadingIndicator';
+import TodosList from 'components/TodosList/TodosList';
 
 interface IProps {
     loadingState: LoadingStates,
@@ -24,7 +25,7 @@ export class TodosContainer extends React.Component<IProps> {
         const {loadingState, todos} = this.props;
         return (
             <LoadingIndicator loadingState={loadingState}>
-                <div>{JSON.stringify(todos)}</div>
+                <TodosList todos={todos}/>
             </LoadingIndicator>
         );
     }

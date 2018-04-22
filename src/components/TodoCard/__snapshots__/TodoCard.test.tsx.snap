@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoCard renders a component 1`] = `
+<Wrapper>
+  <HeaderWrapper>
+    <CardHeader>
+      Todo title
+    </CardHeader>
+    <Status>
+      COMPLETE
+    </Status>
+  </HeaderWrapper>
+  <Goal>
+    Goal description
+  </Goal>
+</Wrapper>
+`;

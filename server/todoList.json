@@ -145,7 +145,7 @@
         "details": "This saga will dispatch several actions while handling the call to the backed to retrieve todos"
       }
     ],
-    "status": "IN_PROGRESS"
+    "status": "COMPLETE"
   },
   {
     "id": "todo-7",
@@ -176,6 +176,24 @@
         "id": "todo-7-step-5",
         "title": "Introduce colors constants and utils for styling",
         "details": "Introduce an enum with named colors, introduce rem() function what will convert px to rems. Extract common styling components like H1 to Styled allowing easy extension."
+      }
+    ],
+    "status": "COMPLETE"
+  },
+  {
+    "id": "todo-8",
+    "title": "Add styling",
+    "goal": "Display Todo List in a neat way",
+    "steps": [
+      {
+        "id": "todo-8-step-1",
+        "title": "Add TodosList component",
+        "details": "This component will render a list of TodoCard Components"
+      },
+      {
+        "id": "todo-8-step-2",
+        "title": "Add TodoCard component",
+        "details": "This is a building block for TodosList"
       }
     ],
     "status": "IN_PROGRESS"

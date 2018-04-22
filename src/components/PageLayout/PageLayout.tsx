@@ -5,10 +5,6 @@ import {colors} from 'components/Styled/colors';
 import {Heading1} from 'components/Styled/Styled';
 import {rem} from 'components/Styled/utils';
 
-export interface IProps {
-    children: React.ReactChild
-}
-
 const Page = styled.div`
     display: flex;
     flex-direction: column;
@@ -29,6 +25,10 @@ PageTitle.displayName = 'PageTitle';
 
 const PageContentHolder = styled.div`padding-top: ${ rem(16) };`;
 PageContentHolder.displayName = 'PageContentHolder';
+
+export interface IProps {
+    children: React.ReactChild
+}
 
 const PageLayout: React.SFC<IProps> = (props) => {
     const {children} = props;

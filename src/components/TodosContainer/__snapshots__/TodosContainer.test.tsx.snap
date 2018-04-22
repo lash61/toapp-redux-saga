@@ -4,8 +4,18 @@ exports[`TodosContainer renders a component 1`] = `
 <LoadingIndicator
   loadingState="COMPLETE"
 >
-  <div>
-    [{"goal":"Goal","id":"some-id","status":"NOT_STARTED","steps":[],"title":"Title"}]
-  </div>
+  <TodosList
+    todos={
+      Array [
+        Object {
+          "goal": "Goal",
+          "id": "some-id",
+          "status": "NOT_STARTED",
+          "steps": Array [],
+          "title": "Title",
+        },
+      ]
+    }
+  />
 </LoadingIndicator>
 `;
