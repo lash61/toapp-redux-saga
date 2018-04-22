@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading indicator hides Cover if loading state is LoadingStates.COMPLETE 1`] = `
+<Outer>
+  <Cover
+    visible={false}
+  >
+    <Logo
+      src={undefined}
+    />
+  </Cover>
+  <Inner>
+    <div>
+      Some content here
+    </div>
+  </Inner>
+</Outer>
+`;
+
+exports[`Loading indicator shows Cover if loading state is LoadingStates.LOADING 1`] = `
+<Outer>
+  <Cover
+    visible={true}
+  >
+    <Logo
+      src={undefined}
+    />
+  </Cover>
+  <Inner>
+    <div>
+      Some content here
+    </div>
+  </Inner>
+</Outer>
+`;

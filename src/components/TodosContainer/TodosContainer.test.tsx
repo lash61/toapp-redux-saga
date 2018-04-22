@@ -1,7 +1,9 @@
 import {shallow} from 'enzyme';
 import * as React from 'react';
 
+import {LoadingStates} from 'domains/loadingStates';
 import {ITodo, TodoStatus} from 'domains/types';
+
 import {TodosContainer} from './TodosContainer';
 
 describe('TodosContainer', () => {
@@ -17,6 +19,7 @@ describe('TodosContainer', () => {
 
         const props = {
             loadTodos: jest.fn(),
+            loadingState: LoadingStates.COMPLETE,
             todos: todosArray
         };
         const component = shallow(<TodosContainer {...props} />);

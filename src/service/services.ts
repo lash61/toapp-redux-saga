@@ -1,4 +1,4 @@
-import apiFactory, {IApiService} from "./api";
+import apiFactory, {IApiService} from './api';
 
 export interface IServiceMap {
     apiService: IApiService

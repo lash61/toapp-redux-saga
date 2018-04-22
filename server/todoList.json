@@ -166,6 +166,11 @@
         "id": "todo-7-step-3",
         "title": "Introduce jest-styled-components",
         "details": "Run 'yarn add jest-styled-components -D' in command line. This will add toHaveStyleRule assertion that will be useful in styled components styling."
+      },
+      {
+        "id": "todo-7-step-4",
+        "title": "Introduce LoadingIndicator component and use it in TodosContainer",
+        "details": "Loading indicator will cover the area of the screen with opacity to give the user feedback on what's going on in the app."
       }
     ],
     "status": "IN_PROGRESS"
