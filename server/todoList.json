@@ -146,5 +146,28 @@
       }
     ],
     "status": "IN_PROGRESS"
+  },
+  {
+    "id": "todo-7",
+    "title": "Introduce styled-components",
+    "goal": "Apply styling to the components with JS",
+    "steps": [
+      {
+        "id": "todo-7-step-1",
+        "title": "Add necessary libraries",
+        "details": "Run 'yarn add styled-components' and 'yarn add normalize.css' in the command line"
+      },
+      {
+        "id": "todo-7-step-2",
+        "title": "Rewrite existing components",
+        "details": "Migrate PageLayout that uses CSS to the new approach."
+      },
+      {
+        "id": "todo-7-step-3",
+        "title": "Introduce jest-styled-components",
+        "details": "Run 'yarn add jest-styled-components -D' in command line. This will add toHaveStyleRule assertion that will be useful in styled components styling."
+      }
+    ],
+    "status": "IN_PROGRESS"
   }
 ]

@@ -1,6 +1,6 @@
 const Koa = require('koa');
 const Router = require('koa-router');
-const cors = require('koa-cors');
+const cors = require('@koa/cors');
 const R = require('ramda');
 const todoList = require('./todoList');
 

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "normalize.css": "^8.0.0",
     "ramda": "^0.25.0",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
@@ -12,7 +13,8 @@
     "react-scripts-ts": "2.15.1",
     "redux": "^3.7.2",
     "redux-saga": "^0.16.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "styled-components": "^3.2.6"
   },
   "scripts": {
     "start": "react-scripts-ts start",
@@ -22,6 +24,7 @@
     "koa": "nodemon server/server"
   },
   "devDependencies": {
+    "@koa/cors": "^2.2.1",
     "@types/enzyme": "^3.1.9",
     "@types/jest": "^22.2.3",
     "@types/node": "^9.6.5",
@@ -33,8 +36,8 @@
     "@types/react-router-redux": "4.0.51",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "jest-styled-components": "^5.0.1",
     "koa": "^2.5.0",
-    "koa-cors": "^0.0.16",
     "koa-router": "^7.4.0",
     "nodemon": "^1.17.3",
     "redux-devtools-extension": "^2.13.2",

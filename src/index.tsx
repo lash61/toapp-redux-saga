@@ -1,3 +1,5 @@
+import './index.css';
+
 import {History} from 'history';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
@@ -10,8 +12,6 @@ import initStore from 'domains/initStore';
 import {IAppState} from 'domains/types';
 
 import RouterComponent from 'components/RouterRocmonent/RouterComponent';
-
-import './index.css';
 
 const store: Store<IAppState> = initStore();
 const history: History = syncHistoryWithStore(browserHistory, store);

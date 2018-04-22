@@ -1,26 +1,43 @@
 import * as React from 'react';
-
-import logo from './logo.svg';
-
-import './PageLayout.css';
+import styled from 'styled-components';
 
 export interface IProps {
     children: React.ReactChild
 }
 
+const Page = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+Page.displayName = 'Page';
+
+const PageHeader = styled.header`
+  background-color: #222;
+  height: 60px;
+  padding: 20px;
+  color: white;
+`;
+PageHeader.displayName = 'PageHeader';
+
+const PageTitle = styled.h1`
+  font-size: 1.5rem;
+`;
+PageTitle.displayName = 'PageTitle';
+
+const PageContentHolder = styled.div`
+  padding-top: 1rem;
+`;
+PageContentHolder.displayName = 'PageContentHolder';
+
 const PageLayout: React.SFC<IProps> = (props) => {
-    const {children} = props;
+    const { children } = props;
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo"/>
-                <h1 className="App-title">Welcome to React</h1>
-            </header>
-            <p className="App-intro">
-                To get started, edit <code>src/App.tsx</code> and save to reload.
-            </p>
-            {children}
-        </div>
+        <Page>
+            <PageHeader>
+                <PageTitle>Welcome to TodoApp</PageTitle>
+            </PageHeader>
+            <PageContentHolder>{children}</PageContentHolder>
+        </Page>
     );
 };
 

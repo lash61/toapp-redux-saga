@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageLayout renders a component 1`] = `
+<Page>
+  <PageHeader>
+    <PageTitle>
+      Welcome to TodoApp
+    </PageTitle>
+  </PageHeader>
+  <PageContentHolder>
+    <div>
+      Children
+    </div>
+  </PageContentHolder>
+</Page>
+`;
