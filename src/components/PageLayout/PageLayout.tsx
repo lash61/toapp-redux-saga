@@ -1,36 +1,37 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
+import {colors} from 'components/Styled/colors';
+import {Heading1} from 'components/Styled/Styled';
+import {rem} from 'components/Styled/utils';
+
 export interface IProps {
     children: React.ReactChild
 }
 
 const Page = styled.div`
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 `;
 Page.displayName = 'Page';
 
 const PageHeader = styled.header`
-  background-color: #222;
-  height: 60px;
-  padding: 20px;
-  color: white;
+    display: flex;
+    align-items: center;
+    height: ${ rem(60) };
+    padding: ${ rem(20) };
+    background-color: ${ colors.DARK_GREY };
 `;
 PageHeader.displayName = 'PageHeader';
 
-const PageTitle = styled.h1`
-  font-size: 1.5rem;
-`;
+const PageTitle = Heading1.extend`color: ${ colors.WHITE };`;
 PageTitle.displayName = 'PageTitle';
 
-const PageContentHolder = styled.div`
-  padding-top: 1rem;
-`;
+const PageContentHolder = styled.div`padding-top: ${ rem(16) };`;
 PageContentHolder.displayName = 'PageContentHolder';
 
 const PageLayout: React.SFC<IProps> = (props) => {
-    const { children } = props;
+    const {children} = props;
     return (
         <Page>
             <PageHeader>

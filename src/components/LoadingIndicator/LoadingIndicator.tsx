@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 import {LoadingStates} from 'domains/loadingStates';
 
+import {colors} from 'components/Styled/colors';
+import {rem} from 'components/Styled/utils';
+
 import logo from './logo.svg';
 
 export interface IProps {
@@ -12,7 +15,7 @@ export interface IProps {
 
 const Outer = styled.div`
     position: relative;
-    min-height: 100px;
+    min-height: ${ rem(100)};
 `;
 Outer.displayName = 'Outer';
 
@@ -26,23 +29,23 @@ interface ICoverProps {
 export const Cover = styled.div`
     width: 100%;
     height: 100%;
-    opacity: 0.5;
-    background: #fff;
+    opacity: 0.75;
     position: absolute;
     align-items: center;
     justify-content: center;
+    background: ${ colors.WHITE };
     display: ${ (props: ICoverProps) => props.visible ? 'flex' : 'none' }
 `;
 Cover.displayName = 'Cover';
 
 const Logo = styled.img`
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-  
-  @keyframes App-logo-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
+    animation: App-logo-spin infinite 20s linear;
+    height: ${ rem(80) }
+    
+    @keyframes App-logo-spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
 `;
 Logo.displayName = 'Logo';
 

@@ -171,6 +171,11 @@
         "id": "todo-7-step-4",
         "title": "Introduce LoadingIndicator component and use it in TodosContainer",
         "details": "Loading indicator will cover the area of the screen with opacity to give the user feedback on what's going on in the app."
+      },
+      {
+        "id": "todo-7-step-5",
+        "title": "Introduce colors constants and utils for styling",
+        "details": "Introduce an enum with named colors, introduce rem() function what will convert px to rems. Extract common styling components like H1 to Styled allowing easy extension."
       }
     ],
     "status": "IN_PROGRESS"
