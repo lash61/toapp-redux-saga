@@ -1,4 +1,4 @@
-import { rem } from './utils';
+import {rem} from './utils';
 
 describe('rem', () => {
     it('converts the passed down px value to rems', () => {

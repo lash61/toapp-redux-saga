@@ -74,7 +74,7 @@
         "details": "Add redux, react-redux, redux-thunk, and redux-devtools-extension"
       },
       {
-        "id": "todo-4-step-1",
+        "id": "todo-4-step-2",
         "title": "Add necessary routing libraries",
         "details": "Add react-router and react-router-redux"
       },
@@ -194,6 +194,29 @@
         "id": "todo-8-step-2",
         "title": "Add TodoCard component",
         "details": "This is a building block for TodosList"
+      }
+    ],
+    "status": "COMPLETE"
+  },
+  {
+    "id": "todo-9",
+    "title": "Add styling for Todo Steps",
+    "goal": "Display Todo Steps in a neat way",
+    "steps": [
+      {
+        "id": "todo-9-step-1",
+        "title": "Add TodoStepList component",
+        "details": "TodoStepList should render TodoSteps in a form of a ordered list"
+      },
+      {
+        "id": "todo-9-step-2",
+        "title": "There should be only one expanded card on the screen",
+        "details": "Introduce selectedTotoId to the store together with special reducer and action creator"
+      },
+      {
+        "id": "todo-9-step-3",
+        "title": "Connect TodoCard to the store",
+        "details": "Propagate selectedTodoId and selectTodo action creator to TodoCard and TodoStepList. Render TodoStepList only for the selectedTodo."
       }
     ],
     "status": "IN_PROGRESS"

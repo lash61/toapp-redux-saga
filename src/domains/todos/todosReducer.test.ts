@@ -2,7 +2,7 @@ import {LoadingStates} from 'domains/loadingStates';
 import {ITodo, TodoStatus} from 'domains/types';
 
 import {TodosActions} from './todosActions';
-import {loadingState, todos} from './todosReducer';
+import {loadingState, selectedTodoId, todos} from './todosReducer';
 
 describe('todos', () => {
 
@@ -68,6 +68,31 @@ describe('loadingState', () => {
         const action = {payload: 'some string', type: 'some-action'};
         const newState = loadingState(LoadingStates.NOT_STARTED, action);
         expect(newState).toBe(LoadingStates.NOT_STARTED);
+    });
+
+});
+
+describe('selectedTodoId', () => {
+
+    it('has default state', () => {
+        const newState = selectedTodoId(undefined, {type: 'some-action'});
+        expect(newState).toEqual('');
+    });
+
+    it('selects a todo item if SELECT_TODO is executed', () => {
+        const newState = selectedTodoId('', {payload: 'todo-1', type: TodosActions.SELECT_TODO});
+        expect(newState).toEqual('todo-1');
+    });
+
+    it('resets a todo item if this todo item is already selected and SELECT_TODO is executed', () => {
+        const newState = selectedTodoId('todo-1', {payload: 'todo-1', type: TodosActions.SELECT_TODO});
+        expect(newState).toEqual('');
+    });
+
+    it('leaves the state unchanged for any other action', () => {
+        const action = {payload: 'some string', type: 'some-action'};
+        const newState = selectedTodoId('todo-4', action);
+        expect(newState).toBe('todo-4');
     });
 
 });

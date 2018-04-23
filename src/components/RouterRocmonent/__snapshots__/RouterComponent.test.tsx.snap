@@ -5,6 +5,10 @@ exports[`RouterComponent renders a component 1`] = `
   history={Object {}}
   render={[Function]}
 >
+  <Redirect
+    from="/"
+    to="todos"
+  />
   <Route
     component={[Function]}
     path="/"

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TodoCard renders a component 1`] = `
+exports[`TodoCard renders a component with expanded TodoStepList 1`] = `
 <Wrapper>
   <HeaderWrapper>
     <CardHeader>
@@ -10,7 +10,30 @@ exports[`TodoCard renders a component 1`] = `
       COMPLETE
     </Status>
   </HeaderWrapper>
-  <Goal>
+  <Goal
+    onClick={[Function]}
+  >
+    Goal description
+  </Goal>
+  <TodoStepList
+    steps={Array []}
+  />
+</Wrapper>
+`;
+
+exports[`TodoCard renders a component with non-expanded TodoStepList 1`] = `
+<Wrapper>
+  <HeaderWrapper>
+    <CardHeader>
+      Todo title
+    </CardHeader>
+    <Status>
+      COMPLETE
+    </Status>
+  </HeaderWrapper>
+  <Goal
+    onClick={[Function]}
+  >
     Goal description
   </Goal>
 </Wrapper>

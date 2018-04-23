@@ -3,13 +3,16 @@ import * as React from 'react';
 
 import {TodoStatus} from 'domains/types';
 
-import TodoCard, {IProps} from './TodoCard';
+import TodoStepList from 'components/TodoStepsList/TodoStepList';
+import {IProps, TodoCard} from './TodoCard';
 
 describe('TodoCard', () => {
 
     let defaultProps: IProps;
     beforeEach(() => {
         defaultProps = {
+            selectTodo: jest.fn(),
+            selectedTodoId: '',
             todo: {
                 goal: 'Goal description',
                 id: 'some-id',
@@ -20,8 +23,17 @@ describe('TodoCard', () => {
         }
     });
 
-    it('renders a component', () => {
+    it('renders a component with non-expanded TodoStepList', () => {
         const render = shallow(<TodoCard {...defaultProps} />);
+        expect(render.find(TodoStepList).exists()).toBe(false);
+        expect(render.getElement()).toMatchSnapshot();
+    });
+
+    it('renders a component with expanded TodoStepList', () => {
+        defaultProps.selectedTodoId = 'some-id';
+
+        const render = shallow(<TodoCard {...defaultProps} />);
+        expect(render.find(TodoStepList).exists()).toBe(true);
         expect(render.getElement()).toMatchSnapshot();
     });
 

@@ -28,8 +28,16 @@ export const loadingState = (state = LoadingStates.NOT_STARTED, action: AnyActio
     return state;
 };
 
+export const selectedTodoId = (state = '', action: AnyAction) => {
+    if (action.type === TodosActions.SELECT_TODO) {
+        return state === action.payload ? '' : action.payload;
+    }
+    return state;
+};
+
 export default combineReducers({
     loadingState,
-    todos
+    selectedTodoId,
+    todos,
 });
 

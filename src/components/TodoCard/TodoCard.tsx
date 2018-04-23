@@ -1,11 +1,15 @@
 import * as React from 'react';
+import {connect} from 'react-redux';
+import {ActionCreator, AnyAction} from 'redux';
 import styled from 'styled-components';
+
+import * as todosActions from 'domains/todos/todosActions';
+import {IAppState, ITodo} from 'domains/types';
 
 import {colors} from 'components/Styled/colors';
 import {Heading2, Paragraph} from 'components/Styled/Styled';
 import {rem} from 'components/Styled/utils';
-
-import {ITodo} from 'domains/types';
+import TodoStepList from 'components/TodoStepsList/TodoStepList';
 
 const Wrapper = styled.div`
     width: 100%;
@@ -35,24 +39,49 @@ const Status = styled.div`
 `;
 Status.displayName = 'Status';
 
-const Goal = Paragraph.extend`padding-top: ${ rem(8) };`;
+const Goal = Paragraph.extend`
+    cursor: pointer;
+    padding-top: ${ rem(8) };
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+`;
 Goal.displayName = 'Goal';
 
 export interface IProps {
     todo: ITodo;
+    selectedTodoId: string;
+    selectTodo: ActionCreator<AnyAction>
 }
 
-const TodoCard: React.SFC<IProps> = (props) => {
-    const {todo} = props;
+export const TodoCard: React.SFC<IProps> = (props) => {
+    const {todo, selectedTodoId, selectTodo} = props;
+
+    const createClickHandler = (todoId: string) => () => {
+        selectTodo(todoId);
+    };
+
     return (
         <Wrapper>
             <HeaderWrapper>
                 <CardHeader>{todo.title}</CardHeader>
                 <Status>{todo.status}</Status>
             </HeaderWrapper>
-            <Goal>{todo.goal}</Goal>
+            <Goal onClick={createClickHandler(todo.id)}>{todo.goal}</Goal>
+            {selectedTodoId === todo.id && <TodoStepList steps={todo.steps}/>}
         </Wrapper>
     );
 };
 
-export default TodoCard;
+const mapStateToProps = (state: IAppState) => {
+    return {
+        selectedTodoId: state.todosState.selectedTodoId
+    };
+};
+
+const mapDispatchToProps = {
+    selectTodo: todosActions.selectTodo
+};
+export default connect(mapStateToProps, mapDispatchToProps)(TodoCard);

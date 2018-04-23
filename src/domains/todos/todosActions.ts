@@ -7,6 +7,8 @@ export enum TodosActions {
     LOAD_TODOS_PENDING = 'LOAD_TODOS_PENDING',
     LOAD_TODOS_SUCCESS = 'LOAD_TODOS_SUCCESS',
     LOAD_TODOS_ERROR = 'LOAD_TODOS_ERROR',
+
+    SELECT_TODO = 'SELECT_TODO',
 }
 
 export interface ILoadTodosSuccessAction extends AnyAction {
@@ -30,4 +32,11 @@ export const loadTodosSuccess: ActionCreator<ILoadTodosSuccessAction> = (todos: 
 
 export const loadTodosError: ActionCreator<AnyAction> = () => {
     return {type: TodosActions.LOAD_TODOS_ERROR};
+};
+
+export const selectTodo: ActionCreator<AnyAction> = (todoId: string) => {
+    return {
+        payload: todoId,
+        type: TodosActions.SELECT_TODO
+    };
 };

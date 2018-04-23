@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoStepList renders a component 1`] = `
+<OrderedList>
+  <ListItem>
+    <Bold>
+      Step tile
+      :
+    </Bold>
+    <span>
+      Step details
+    </span>
+  </ListItem>
+</OrderedList>
+`;

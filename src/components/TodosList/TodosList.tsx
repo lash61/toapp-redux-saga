@@ -10,22 +10,24 @@ const Wrapper = styled.div`
     display: flex;
     margin: 0 auto;
     align-items: center;
+    box-sizing: border-box;
+    padding: 0 ${ rem(20) }
     flex-direction: column;
     max-width: ${ rem(960) };
 `;
 Wrapper.displayName = 'Wrapper';
 
 export interface IProps {
-    todos: ITodo[]
+    todos: ITodo[];
 }
 
 const TodosList: React.SFC<IProps> = (props) => {
     const {todos} = props;
     return (
         <Wrapper>
-            {todos.map((todo: ITodo) => {
-                return <TodoCard todo={todo} key={todo.id}/>
-            })}
+            {todos.map((todo: ITodo) =>
+                <TodoCard todo={todo} key={todo.id}/>
+            )}
         </Wrapper>
     );
 };

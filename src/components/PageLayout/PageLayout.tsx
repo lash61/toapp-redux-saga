@@ -27,7 +27,7 @@ const PageContentHolder = styled.div`padding-top: ${ rem(16) };`;
 PageContentHolder.displayName = 'PageContentHolder';
 
 export interface IProps {
-    children: React.ReactChild
+    children: React.ReactChild;
 }
 
 const PageLayout: React.SFC<IProps> = (props) => {

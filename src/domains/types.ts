@@ -8,7 +8,8 @@ export interface IAppState {
 
 export interface ITodosState {
     loadingState: LoadingStates,
-    todos: ITodo[]
+    todos: ITodo[],
+    selectedTodoId: string
 }
 
 export enum TodoStatus {
