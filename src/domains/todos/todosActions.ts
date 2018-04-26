@@ -9,34 +9,73 @@ export enum TodosActions {
     LOAD_TODOS_ERROR = 'LOAD_TODOS_ERROR',
 
     SELECT_TODO = 'SELECT_TODO',
+
+    UPDATE_STATUS = 'UPDATE_STATUS',
+    UPDATE_STATUS_PENDING = 'UPDATE_STATUS_PENDING',
+    UPDATE_STATUS_SUCCESS = 'UPDATE_STATUS_SUCCESS',
+    UPDATE_STATUS_ERROR = 'UPDATE_STATUS_ERROR',
 }
 
 export interface ILoadTodosSuccessAction extends AnyAction {
     payload: ITodo[];
 }
 
-export const loadTodos: ActionCreator<AnyAction> = () => {
+const loadTodos: ActionCreator<AnyAction> = () => {
     return {type: TodosActions.LOAD_TODOS};
 };
 
-export const loadTodosPending: ActionCreator<AnyAction> = () => {
+const loadTodosPending: ActionCreator<AnyAction> = () => {
     return {type: TodosActions.LOAD_TODOS_PENDING};
 };
 
-export const loadTodosSuccess: ActionCreator<ILoadTodosSuccessAction> = (todos: ITodo[]) => {
+const loadTodosSuccess: ActionCreator<ILoadTodosSuccessAction> = (todos: ITodo[]) => {
     return {
         payload: todos,
         type: TodosActions.LOAD_TODOS_SUCCESS
     };
 };
 
-export const loadTodosError: ActionCreator<AnyAction> = () => {
+const loadTodosError: ActionCreator<AnyAction> = () => {
     return {type: TodosActions.LOAD_TODOS_ERROR};
 };
 
-export const selectTodo: ActionCreator<AnyAction> = (todoId: string) => {
+const selectTodo: ActionCreator<AnyAction> = (todoId: string) => {
     return {
         payload: todoId,
         type: TodosActions.SELECT_TODO
     };
 };
+
+const updateTodoStatus: ActionCreator<AnyAction> = (todoId: string) => {
+    return {
+        payload: todoId,
+        type: TodosActions.UPDATE_STATUS
+    };
+};
+
+const updateTodoStatusPending: ActionCreator<AnyAction> = () => {
+    return {type: TodosActions.UPDATE_STATUS_PENDING};
+};
+
+const updateTodoStatusSuccess: ActionCreator<ILoadTodosSuccessAction> = (todos: ITodo[]) => {
+    return {
+        payload: todos,
+        type: TodosActions.UPDATE_STATUS_SUCCESS
+    };
+};
+
+const updateTodoStatusError: ActionCreator<AnyAction> = () => {
+    return {type: TodosActions.UPDATE_STATUS_ERROR};
+};
+
+export default {
+    loadTodos,
+    loadTodosError,
+    loadTodosPending,
+    loadTodosSuccess,
+    selectTodo,
+    updateTodoStatus,
+    updateTodoStatusError,
+    updateTodoStatusPending,
+    updateTodoStatusSuccess
+}

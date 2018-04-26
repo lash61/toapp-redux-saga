@@ -7,7 +7,8 @@ enum RequestMethods {
 
 export interface IApiService {
     loadTodoList: () => Promise<ITodo[]>,
-    loadTodo: (todoId: string) => Promise<ITodo>
+    loadTodo: (todoId: string) => Promise<ITodo>,
+    updateTodoStatus: (todoId: string) => Promise<ITodo[]>
 }
 
 const request = (method: RequestMethods, resource: string, body?: string) => {
@@ -28,6 +29,10 @@ const apiFactory = (): IApiService => {
 
         loadTodo: (todoId: string) => {
             return request(RequestMethods.GET, `/todoList/${todoId}`)
+        },
+
+        updateTodoStatus: (todoId: string) => {
+            return request(RequestMethods.POST, `/todoList/${todoId}/updateStatus`)
         }
     }
 };

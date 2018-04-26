@@ -40,6 +40,33 @@ router
             });
     });
 
+const getNextStatus = (todoStatus) => {
+    if (todoStatus === 'NOT_STARTED') {
+        return 'IN_PROGRESS';
+    }
+    if (todoStatus === 'IN_PROGRESS') {
+        return 'COMPLETE';
+    }
+    if (todoStatus === 'COMPLETE') {
+        return 'NOT_STARTED';
+    }
+};
+
+router
+    .param('todoId', (id, ctx, next) => {
+        ctx.todoId = id;
+        return next();
+    })
+    .post('/api/todolist/:todoId/updateStatus', (ctx, next) => {
+        return applyLatency()
+            .then(() => {
+                const todoId = ctx.todoId;
+                const todoItem = R.find(R.propEq('id', todoId))(todoList);
+                todoItem.status = getNextStatus(todoItem.status);
+                ctx.body = todoList;
+            });
+    });
+
 app
     .use(cors())
     .use(router.routes())

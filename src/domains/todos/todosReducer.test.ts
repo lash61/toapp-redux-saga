@@ -25,6 +25,12 @@ describe('todos', () => {
         expect(newState).toBe(todosArray);
     });
 
+    it('updates the state on UPDATE_STATUS_SUCCESS', () => {
+        const action = {payload: todosArray, type: TodosActions.UPDATE_STATUS_SUCCESS};
+        const newState = todos([], action);
+        expect(newState).toBe(todosArray);
+    });
+
     it('leaves the state unchanged for any other action', () => {
         const action = {payload: 'some string', type: 'some-action'};
         const newState = todos(todosArray, action);
@@ -40,28 +46,36 @@ describe('loadingState', () => {
         expect(newState).toEqual(LoadingStates.NOT_STARTED);
     });
 
-    it('returns LOADING on TodosActions.LOAD_TODOS_PENDING', () => {
-        const newState = loadingState(
-            LoadingStates.NOT_STARTED,
-            {type: TodosActions.LOAD_TODOS_PENDING}
-        );
-        expect(newState).toEqual(LoadingStates.LOADING);
+    const pendingActions = [
+        TodosActions.LOAD_TODOS_PENDING,
+        TodosActions.UPDATE_STATUS_PENDING,
+    ];
+
+    pendingActions.forEach((action) => {
+        it(`returns LOADING for ${action}`, () => {
+            const newState = loadingState(
+                LoadingStates.NOT_STARTED,
+                {type: action}
+            );
+            expect(newState).toEqual(LoadingStates.LOADING);
+        });
     });
 
-    it('returns COMPLETE on TodosActions.LOAD_TODOS_SUCCESS', () => {
-        const newState = loadingState(
-            LoadingStates.NOT_STARTED,
-            {type: TodosActions.LOAD_TODOS_SUCCESS}
-        );
-        expect(newState).toEqual(LoadingStates.COMPLETE);
-    });
+    const completeActions = [
+        TodosActions.LOAD_TODOS_SUCCESS,
+        TodosActions.LOAD_TODOS_ERROR,
+        TodosActions.UPDATE_STATUS_SUCCESS,
+        TodosActions.UPDATE_STATUS_ERROR
+    ];
 
-    it('returns COMPLETE on TodosActions.LOAD_TODOS_ERROR', () => {
-        const newState = loadingState(
-            LoadingStates.NOT_STARTED,
-            {type: TodosActions.LOAD_TODOS_ERROR}
-        );
-        expect(newState).toEqual(LoadingStates.COMPLETE);
+    completeActions.forEach((action) => {
+        it(`returns COMPLETE for ${action}`, () => {
+            const newState = loadingState(
+                LoadingStates.NOT_STARTED,
+                {type: action}
+            );
+            expect(newState).toEqual(LoadingStates.COMPLETE);
+        });
     });
 
     it('leaves the state unchanged for any other action', () => {

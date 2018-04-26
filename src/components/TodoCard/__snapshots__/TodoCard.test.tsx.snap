@@ -6,7 +6,9 @@ exports[`TodoCard renders a component with expanded TodoStepList 1`] = `
     <CardHeader>
       Todo title
     </CardHeader>
-    <Status>
+    <Status
+      onClick={[Function]}
+    >
       COMPLETE
     </Status>
   </HeaderWrapper>
@@ -27,7 +29,9 @@ exports[`TodoCard renders a component with non-expanded TodoStepList 1`] = `
     <CardHeader>
       Todo title
     </CardHeader>
-    <Status>
+    <Status
+      onClick={[Function]}
+    >
       COMPLETE
     </Status>
   </HeaderWrapper>

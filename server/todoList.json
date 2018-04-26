@@ -15,7 +15,7 @@
         "details": "Go to directory and run 'create-react-app todoapp --scripts-version=react-scripts-ts' to initialise the repo in todoapp folder"
       }
     ],
-    "status": "COMPLETE"
+    "status": "NOT_STARTED"
   },
   {
     "id": "todo-2",
@@ -33,7 +33,7 @@
         "details": "Server directory will contain all server-side code. Server.js contains the server launch script."
       }
     ],
-    "status": "COMPLETE"
+    "status": "NOT_STARTED"
   },
   {
     "id": "todo-3",
@@ -61,7 +61,7 @@
         "details": "Call the backend from the App component, updating it's state when the promise is resolved"
       }
     ],
-    "status": "COMPLETE"
+    "status": "NOT_STARTED"
   },
   {
     "id": "todo-4",
@@ -89,7 +89,7 @@
         "details": "Write a function that will initialise redux middlewares, store enhancers and create the actual store"
       }
     ],
-    "status": "COMPLETE"
+    "status": "NOT_STARTED"
   },
   {
     "id": "todo-5",
@@ -117,7 +117,7 @@
         "details": "TodosContainer should actually execute call to the server in componentDidMount() and display the retrieved data."
       }
     ],
-    "status": "COMPLETE"
+    "status": "NOT_STARTED"
   },
   {
     "id": "todo-6",
@@ -145,7 +145,7 @@
         "details": "This saga will dispatch several actions while handling the call to the backed to retrieve todos"
       }
     ],
-    "status": "COMPLETE"
+    "status": "NOT_STARTED"
   },
   {
     "id": "todo-7",
@@ -178,7 +178,7 @@
         "details": "Introduce an enum with named colors, introduce rem() function what will convert px to rems. Extract common styling components like H1 to Styled allowing easy extension."
       }
     ],
-    "status": "COMPLETE"
+    "status": "NOT_STARTED"
   },
   {
     "id": "todo-8",
@@ -196,7 +196,7 @@
         "details": "This is a building block for TodosList"
       }
     ],
-    "status": "COMPLETE"
+    "status": "NOT_STARTED"
   },
   {
     "id": "todo-9",
@@ -219,6 +219,39 @@
         "details": "Propagate selectedTodoId and selectTodo action creator to TodoCard and TodoStepList. Render TodoStepList only for the selectedTodo."
       }
     ],
-    "status": "IN_PROGRESS"
+    "status": "NOT_STARTED"
+  },
+  {
+    "id": "todo-10",
+    "title": "Update status",
+    "goal": "A user needs a way to update the completion status of every todo",
+    "steps": [
+      {
+        "id": "todo-10-step-1",
+        "title": "Add updateStatus request handler on the backend",
+        "details": "It receives a POST request to a todoList/:todoId/updateStatus. It updates the status on the selected Todo and returns the updated list."
+      },
+      {
+        "id": "todo-10-step-2",
+        "title": "Create updateTodoStatus actions",
+        "details": "Introduce a set of actions, that will be used in todos saga"
+      },
+      {
+        "id": "todo-10-step-3",
+        "title": "Update todosReducer",
+        "details": "Add the logic of handling newly introduced actions to the reducer"
+      },
+      {
+        "id": "todo-10-step-4",
+        "title": "Add updateTodoStatus handling to todos sage",
+        "details": "Add the logic of an actual backend call with response handling"
+      },
+      {
+        "id": "todo-10-step-5",
+        "title": "Add the handler on the UI",
+        "details": "Add the clickHandler to Status component in TodoCard. The click handler will dispatch udateTodoStatus action."
+      }
+    ],
+    "status": "NOT_STARTED"
   }
 ]

@@ -4,7 +4,7 @@ import * as React from 'react';
 import {TodoStatus} from 'domains/types';
 
 import TodoStepList from 'components/TodoStepsList/TodoStepList';
-import {IProps, TodoCard} from './TodoCard';
+import {Goal, IProps, Status, TodoCard} from './TodoCard';
 
 describe('TodoCard', () => {
 
@@ -19,7 +19,8 @@ describe('TodoCard', () => {
                 status: TodoStatus.COMPLETE,
                 steps: [],
                 title: 'Todo title'
-            }
+            },
+            updateTodoStatus: jest.fn()
         }
     });
 
@@ -35,6 +36,20 @@ describe('TodoCard', () => {
         const render = shallow(<TodoCard {...defaultProps} />);
         expect(render.find(TodoStepList).exists()).toBe(true);
         expect(render.getElement()).toMatchSnapshot();
+    });
+
+    it('executes selectTodo if user clicks on Goal', () => {
+        const render = shallow(<TodoCard {...defaultProps} />);
+        const goalComponent = render.find(Goal);
+        goalComponent.simulate('click');
+        expect(defaultProps.selectTodo).toHaveBeenCalledWith('some-id');
+    });
+
+    it('executes updateTodoStatus if user clicks on Status', () => {
+        const render = shallow(<TodoCard {...defaultProps} />);
+        const statusComponent = render.find(Status);
+        statusComponent.simulate('click');
+        expect(defaultProps.updateTodoStatus).toHaveBeenCalledWith('some-id');
     });
 
 });

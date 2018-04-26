@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {ActionCreator, AnyAction} from 'redux';
 import styled from 'styled-components';
 
-import * as todosActions from 'domains/todos/todosActions';
+import todosActions from 'domains/todos/todosActions';
 import {IAppState, ITodo} from 'domains/types';
 
 import {colors} from 'components/Styled/colors';
@@ -27,19 +27,32 @@ const HeaderWrapper = styled.div`
 `;
 HeaderWrapper.displayName = 'HeaderWrapper';
 
-const CardHeader = Heading2.extend`flex: 5 1 0px;`;
+const CardHeader = Heading2.extend`
+    flex: 5 1 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0 ${ rem(10) } 0 0;
+`;
 CardHeader.displayName = 'CardHeader';
 
-const Status = styled.div`
+export const Status = styled.div`
     flex: 1 1 0px;
     display: flex;
-    padding: 0 ${ rem(5) }
+    cursor: pointer;
     align-items: center;
+    padding: 0 ${ rem(5) };
+    border-radius: ${ rem(3) };
+    border: 1px solid ${ colors.GREY };
     justify-content: center;
+    
+    &:hover {
+      border: 1px solid ${ colors.DARK_GREY };
+    }
 `;
 Status.displayName = 'Status';
 
-const Goal = Paragraph.extend`
+export const Goal = Paragraph.extend`
     cursor: pointer;
     padding-top: ${ rem(8) };
     text-decoration: underline;
@@ -53,23 +66,28 @@ Goal.displayName = 'Goal';
 export interface IProps {
     todo: ITodo;
     selectedTodoId: string;
-    selectTodo: ActionCreator<AnyAction>
+    selectTodo: ActionCreator<AnyAction>,
+    updateTodoStatus: ActionCreator<AnyAction>
 }
 
 export const TodoCard: React.SFC<IProps> = (props) => {
-    const {todo, selectedTodoId, selectTodo} = props;
+    const {todo, selectedTodoId, selectTodo, updateTodoStatus} = props;
 
-    const createClickHandler = (todoId: string) => () => {
+    const createGoalClickHandler = (todoId: string) => () => {
         selectTodo(todoId);
+    };
+
+    const createStatusClickHandler = (todoId: string) => () => {
+        updateTodoStatus(todoId);
     };
 
     return (
         <Wrapper>
             <HeaderWrapper>
                 <CardHeader>{todo.title}</CardHeader>
-                <Status>{todo.status}</Status>
+                <Status onClick={createStatusClickHandler(todo.id)}>{todo.status}</Status>
             </HeaderWrapper>
-            <Goal onClick={createClickHandler(todo.id)}>{todo.goal}</Goal>
+            <Goal onClick={createGoalClickHandler(todo.id)}>{todo.goal}</Goal>
             {selectedTodoId === todo.id && <TodoStepList steps={todo.steps}/>}
         </Wrapper>
     );
@@ -82,6 +100,7 @@ const mapStateToProps = (state: IAppState) => {
 };
 
 const mapDispatchToProps = {
-    selectTodo: todosActions.selectTodo
+    selectTodo: todosActions.selectTodo,
+    updateTodoStatus: todosActions.updateTodoStatus
 };
 export default connect(mapStateToProps, mapDispatchToProps)(TodoCard);

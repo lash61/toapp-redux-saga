@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {ActionCreator, AnyAction} from 'redux';
 
 import {LoadingStates} from 'domains/loadingStates';
-import * as todosActions from 'domains/todos/todosActions';
+import todosActions from 'domains/todos/todosActions';
 import {IAppState, ITodo} from 'domains/types';
 
 import LoadingIndicator from 'components/LoadingIndicator/LoadingIndicator';
