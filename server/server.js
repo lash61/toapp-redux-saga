@@ -1,8 +1,8 @@
 const Koa = require('koa');
 const Router = require('koa-router');
 const cors = require('@koa/cors');
-const R = require('ramda');
-const todoList = require('./todoList');
+
+const todoListService = require('./todoListService');
 
 const config = {
     port: 8090
@@ -19,51 +19,35 @@ const applyLatency = (millis = 1000) => {
     });
 };
 
+const createParamMiddleware = (paramName) => (id, ctx, next) => {
+    ctx[paramName] = id;
+    return next();
+};
+const todoIdParamMiddleWare = createParamMiddleware('todoId');
+
 router
     .get('/api/todolist', (ctx, next) => {
         return applyLatency()
             .then(() => {
-                ctx.body = todoList;
+                ctx.body = todoListService.getTodoList();
             });
     });
 
 router
-    .param('todoId', (id, ctx, next) => {
-        ctx.todoId = id;
-        return next();
-    })
+    .param('todoId', todoIdParamMiddleWare)
     .get('/api/todolist/:todoId', (ctx, next) => {
         return applyLatency()
             .then(() => {
-                const todoId = ctx.todoId;
-                ctx.body = R.find(R.propEq('id', todoId))(todoList);
+                ctx.body = todoListService.getTodoById(ctx.todoId);
             });
     });
 
-const getNextStatus = (todoStatus) => {
-    if (todoStatus === 'NOT_STARTED') {
-        return 'IN_PROGRESS';
-    }
-    if (todoStatus === 'IN_PROGRESS') {
-        return 'COMPLETE';
-    }
-    if (todoStatus === 'COMPLETE') {
-        return 'NOT_STARTED';
-    }
-};
-
 router
-    .param('todoId', (id, ctx, next) => {
-        ctx.todoId = id;
-        return next();
-    })
+    .param('todoId', todoIdParamMiddleWare)
     .post('/api/todolist/:todoId/updateStatus', (ctx, next) => {
         return applyLatency()
             .then(() => {
-                const todoId = ctx.todoId;
-                const todoItem = R.find(R.propEq('id', todoId))(todoList);
-                todoItem.status = getNextStatus(todoItem.status);
-                ctx.body = todoList;
+                ctx.body = todoListService.switchStatusForTodo(ctx.todoId);
             });
     });
 
