@@ -28,8 +28,8 @@ const switchStatusForTodo = (todoId) => {
 };
 
 const service = {
-    getTodoList,
     getTodoById,
+    getTodoList,
     switchStatusForTodo
 };
 

@@ -11,7 +11,7 @@ import {Store} from 'redux';
 import initStore from 'domains/initStore';
 import {IAppState} from 'domains/types';
 
-import RouterComponent from 'components/RouterRocmonent/RouterComponent';
+import RouterComponent from 'components/RouterComponent/RouterComponent';
 
 const store: Store<IAppState> = initStore();
 const history: History = syncHistoryWithStore(browserHistory, store);
