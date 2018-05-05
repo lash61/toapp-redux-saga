@@ -36,7 +36,7 @@ const CardHeader = Heading2.extend`
 `;
 CardHeader.displayName = 'CardHeader';
 
-export const Status = styled.div`
+export const Status = Paragraph.extend`
     flex: 1 1 0px;
     display: flex;
     cursor: pointer;

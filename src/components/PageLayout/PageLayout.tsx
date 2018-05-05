@@ -16,7 +16,7 @@ const PageHeader = styled.header`
     display: flex;
     align-items: center;
     padding: ${ rem(20) };
-    flex: 0 0 ${ rem(60) };
+    flex: 0 0 ${ rem(40) };
     background-color: ${ colors.DARK_GREY };
 `;
 PageHeader.displayName = 'PageHeader';
