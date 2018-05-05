@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import {ITodoStep} from 'domains/types';
+import {ITodoStep} from 'domains/todos/todosTypes';
 
 import {rem} from 'components/Styled/utils';
 

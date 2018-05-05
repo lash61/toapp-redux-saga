@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import {default as TodosList, IProps} from './TodosList';
 
-import {TodoStatus} from 'domains/types';
+import {TodoStatus} from 'domains/todos/todosTypes';
 
 import TodoCard from 'components/TodoCard/TodoCard';
 

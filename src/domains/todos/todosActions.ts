@@ -1,6 +1,6 @@
 import {ActionCreator, AnyAction} from 'redux';
 
-import {ITodo} from 'domains/types';
+import {ITodo} from 'domains/todos/todosTypes';
 
 export enum TodosActions {
     LOAD_TODOS = 'LOAD_TODOS',

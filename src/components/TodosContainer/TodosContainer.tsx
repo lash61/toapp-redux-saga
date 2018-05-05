@@ -4,7 +4,8 @@ import {ActionCreator, AnyAction} from 'redux';
 
 import {LoadingStates} from 'domains/loadingStates';
 import todosActions from 'domains/todos/todosActions';
-import {IAppState, ITodo} from 'domains/types';
+import {ITodo} from 'domains/todos/todosTypes';
+import {IAppState} from 'domains/types';
 
 import LoadingIndicator from 'components/LoadingIndicator/LoadingIndicator';
 import TodosList from 'components/TodosList/TodosList';

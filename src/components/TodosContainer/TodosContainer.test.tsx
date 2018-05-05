@@ -2,7 +2,7 @@ import {shallow} from 'enzyme';
 import * as React from 'react';
 
 import {LoadingStates} from 'domains/loadingStates';
-import {ITodo, TodoStatus} from 'domains/types';
+import {ITodo, TodoStatus} from 'domains/todos/todosTypes';
 
 import {TodosContainer} from './TodosContainer';
 

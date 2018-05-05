@@ -3,7 +3,7 @@ import {all, call, put, takeLatest} from 'redux-saga/effects';
 
 import {IApiService} from 'service/api';
 import {IServiceMap} from 'service/services';
-import todosActions, { TodosActions } from './todosActions';
+import todosActions, {TodosActions} from './todosActions';
 
 export function* loadTodos(apiService: IApiService) {
     yield put(todosActions.loadTodosPending());

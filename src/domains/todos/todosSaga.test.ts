@@ -1,7 +1,8 @@
 import {Action} from 'redux';
 import {runSaga, RunSagaOptions} from 'redux-saga';
 
-import {IAppState, ITodo} from 'domains/types';
+import {ITodo} from 'domains/todos/todosTypes';
+import {IAppState} from 'domains/types';
 import {IApiService} from 'service/api';
 
 import todosActions, {TodosActions} from './todosActions';

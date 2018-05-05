@@ -4,7 +4,8 @@ import {ActionCreator, AnyAction} from 'redux';
 import styled from 'styled-components';
 
 import todosActions from 'domains/todos/todosActions';
-import {IAppState, ITodo} from 'domains/types';
+import {ITodo} from 'domains/todos/todosTypes';
+import {IAppState} from 'domains/types';
 
 import {colors} from 'components/Styled/colors';
 import {Heading2, Paragraph} from 'components/Styled/Styled';

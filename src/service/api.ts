@@ -1,4 +1,4 @@
-import {ITodo} from 'domains/types';
+import {ITodo} from 'domains/todos/todosTypes';
 
 enum RequestMethods {
     GET = 'GET',

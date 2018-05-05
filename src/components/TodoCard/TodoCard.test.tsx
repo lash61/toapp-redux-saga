@@ -1,7 +1,7 @@
 import {shallow} from 'enzyme';
 import * as React from 'react';
 
-import {TodoStatus} from 'domains/types';
+import {TodoStatus} from 'domains/todos/todosTypes';
 
 import TodoStepList from 'components/TodoStepsList/TodoStepList';
 import {Goal, IProps, Status, TodoCard} from './TodoCard';

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import {ITodo} from 'domains/types';
+import {ITodo} from 'domains/todos/todosTypes';
 
 import {rem} from 'components/Styled/utils';
 import TodoCard from 'components/TodoCard/TodoCard';

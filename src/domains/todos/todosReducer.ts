@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import {AnyAction, combineReducers} from 'redux';
 
 import {LoadingStates} from 'domains/loadingStates';
-import {ITodo} from 'domains/types';
+import {ITodo} from 'domains/todos/todosTypes';
 import {TodosActions} from './todosActions';
 
 export const todos = (state: ITodo[] = [], action: AnyAction) => {

@@ -1,5 +1,5 @@
 import {LoadingStates} from 'domains/loadingStates';
-import {ITodo, TodoStatus} from 'domains/types';
+import {ITodo, TodoStatus} from 'domains/todos/todosTypes';
 
 import {TodosActions} from './todosActions';
 import {loadingState, selectedTodoId, todos} from './todosReducer';

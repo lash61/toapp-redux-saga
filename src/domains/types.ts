@@ -1,10 +1,7 @@
 import {RouterState} from 'react-router-redux';
-import {LoadingStates} from './loadingStates';
 
-export interface IAppState {
-    routing: RouterState,
-    todosState: ITodosState
-}
+import {LoadingStates} from 'domains/loadingStates';
+import {ITodo} from 'domains/todos/todosTypes';
 
 export interface ITodosState {
     loadingState: LoadingStates,
@@ -12,22 +9,7 @@ export interface ITodosState {
     selectedTodoId: string
 }
 
-export enum TodoStatus {
-    NOT_STARTED = 'NOT_STARTED',
-    IN_PROGRESS = 'IN_PROGRESS',
-    COMPLETE = 'COMPLETE',
-}
-
-export interface ITodoStep {
-    id: string,
-    title: string,
-    details: string
-}
-
-export interface ITodo {
-    id: string,
-    title: string,
-    goal: string,
-    steps: ITodoStep[],
-    status: TodoStatus
+export interface IAppState {
+    routing: RouterState,
+    todosState: ITodosState
 }
