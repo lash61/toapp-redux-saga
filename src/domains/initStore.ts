@@ -6,6 +6,7 @@ import thunk from 'redux-thunk';
 import rootReducer from './rootReducer';
 import rootSaga from './rootSaga';
 import {IAppState} from './types';
+import {createDriver} from './window/windowDriver';
 
 import serviceMapFactory from 'service/services';
 
@@ -24,6 +25,9 @@ const initStore = (): Store<IAppState> => {
 
     const servicesMap = serviceMapFactory();
     sagaMiddleware.run(rootSaga, servicesMap);
+
+    const driver = createDriver(window, store);
+    driver.start();
 
     return store;
 };
