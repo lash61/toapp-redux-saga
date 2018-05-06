@@ -1,5 +1,6 @@
 import {Store} from 'redux';
 
+import {MediaType} from 'components/Styled/utils';
 import {IAppState} from 'domains/types';
 
 import windowActions from './windowActions';
@@ -29,8 +30,10 @@ describe('windowDriver', () => {
                 }
             }),
 
-            matchMedia: jest.fn(() => {
+            matchMedia: jest.fn((mediaType: MediaType) => {
                 return {
+                    matches: MediaType.TABLET === mediaType,
+                    media: mediaType,
                     addListener: jest.fn((mql: MediaQueryList) => {
                         mediaQueryListeners.push(mql);
                     }),
@@ -52,7 +55,7 @@ describe('windowDriver', () => {
         };
     });
 
-    it('dispatches an action with initial dimensions on driver.start()', () => {
+    it('dispatches actions with initial dimensions and initial mediaType on driver.start()', () => {
         const driver = createDriver(window, store);
         driver.start();
 
@@ -62,6 +65,10 @@ describe('windowDriver', () => {
         };
         expect(store.dispatch).toHaveBeenCalledWith(
             windowActions.windowDimensionsUpdated(initialDimensions)
+        );
+
+        expect(store.dispatch).toHaveBeenCalledWith(
+            windowActions.mediaTypeUpdated(MediaType.TABLET)
         );
     });
 

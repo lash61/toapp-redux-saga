@@ -36,6 +36,10 @@ export const createDriver = (window: IWindow, store: Store<IAppState>): IDriver 
     return {
         start: () => {
             resizeHandler();
+            mediaQueryListener(mobileMQL);
+            mediaQueryListener(tabletMQL);
+            mediaQueryListener(desktopMQL);
+
             window.addEventListener('resize', resizeHandlerDebounced);
 
             mobileMQL.addListener(mediaQueryListener);
