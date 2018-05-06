@@ -11,8 +11,10 @@ describe('windowDriver', () => {
     let window: IWindow;
     let store: Store<IAppState>;
     let windowListeners: Array<(event: UIEvent) => void>;
+    let mediaQueryListeners: MediaQueryList[];
     beforeEach(() => {
         windowListeners = [];
+        mediaQueryListeners = [];
         window = {
             innerHeight: 768,
             innerWidth: 1024,
@@ -24,6 +26,20 @@ describe('windowDriver', () => {
                 const index = windowListeners.indexOf(fn);
                 if (index > -1) {
                     windowListeners.splice(index, 1);
+                }
+            }),
+
+            matchMedia: jest.fn(() => {
+                return {
+                    addListener: jest.fn((mql: MediaQueryList) => {
+                        mediaQueryListeners.push(mql);
+                    }),
+                    removeListener: jest.fn((mql: MediaQueryList) => {
+                        const index = mediaQueryListeners.indexOf(mql);
+                        if (index > -1) {
+                            mediaQueryListeners.splice(index, 1);
+                        }
+                    })
                 }
             })
         };
@@ -58,6 +74,15 @@ describe('windowDriver', () => {
         driver.stop();
         expect(window.removeEventListener).toHaveBeenCalled();
         expect(windowListeners.length).toBe(0);
+    });
+
+    it('adds media query listeners on driver.start() and removes them on driver.stop()', () => {
+        const driver = createDriver(window, store);
+        driver.start();
+        expect(mediaQueryListeners.length).toBe(3);
+
+        driver.stop();
+        expect(mediaQueryListeners.length).toBe(0);
     });
 
 });

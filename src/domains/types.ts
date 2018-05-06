@@ -1,8 +1,9 @@
 import {RouterState} from 'react-router-redux';
 
+import {MediaType} from 'components/Styled/utils';
 import {LoadingStates} from 'domains/loadingStates';
 import {ITodo} from 'domains/todos/todosTypes';
-import {IWindowDimensions} from './window/windowTypes';
+import {IWindowDimensions} from 'domains/window/windowTypes';
 
 export interface ITodosState {
     loadingState: LoadingStates,
@@ -11,7 +12,8 @@ export interface ITodosState {
 }
 
 export interface IWindowState {
-    windowDimensions: IWindowDimensions
+    windowDimensions: IWindowDimensions,
+    media: MediaType
 }
 
 export interface IAppState {

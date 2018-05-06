@@ -6,6 +6,8 @@ export interface IWindow {
 
     addEventListener: (event: string, handler: (event: UIEvent) => void) => void
     removeEventListener: (event: string, handler: (event: UIEvent) => void) => void
+
+    matchMedia(mediaQuery: string): MediaQueryList;
 }
 
 export interface IWindowDimensions {
