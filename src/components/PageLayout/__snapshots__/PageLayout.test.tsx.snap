@@ -1,20 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PageLayout renders a component 1`] = `
-<Page>
+<Page
+  theme={
+    Object {
+      "hoverStatusBorderColor": "#222222",
+      "pageBackgroundColor": "#ffffff",
+      "pageHeaderBgColor": "#222222",
+      "pageMainTextColor": "#000000",
+      "pageTitleColor": "#ffffff",
+      "statusBorderColor": "#666666",
+      "todoCardBorderColor": "#666666",
+    }
+  }
+>
   <PageHeader
     theme={
       Object {
+        "hoverStatusBorderColor": "#222222",
+        "pageBackgroundColor": "#ffffff",
         "pageHeaderBgColor": "#222222",
+        "pageMainTextColor": "#000000",
         "pageTitleColor": "#ffffff",
+        "statusBorderColor": "#666666",
+        "todoCardBorderColor": "#666666",
       }
     }
   >
     <PageTitle
       theme={
         Object {
+          "hoverStatusBorderColor": "#222222",
+          "pageBackgroundColor": "#ffffff",
           "pageHeaderBgColor": "#222222",
+          "pageMainTextColor": "#000000",
           "pageTitleColor": "#ffffff",
+          "statusBorderColor": "#666666",
+          "todoCardBorderColor": "#666666",
         }
       }
     >

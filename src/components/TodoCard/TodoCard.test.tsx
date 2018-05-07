@@ -3,8 +3,9 @@ import * as React from 'react';
 
 import {TodoStatus} from 'domains/todos/todosTypes';
 
+import Status from 'components/Status/Status';
 import TodoStepList from 'components/TodoStepsList/TodoStepList';
-import {Goal, IProps, Status, TodoCard} from './TodoCard';
+import {Goal, IProps, TodoCard} from './TodoCard';
 
 describe('TodoCard', () => {
 

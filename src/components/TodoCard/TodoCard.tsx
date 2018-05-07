@@ -6,21 +6,22 @@ import todosActions from 'domains/todos/todosActions';
 import {ITodo} from 'domains/todos/todosTypes';
 import {IAppState} from 'domains/types';
 
-import {colors} from 'components/Styled/colors';
+import Status from 'components/Status/Status';
 import {Heading2, Paragraph} from 'components/Styled/Styled';
 import styled from 'components/Styled/styledComponents';
 import {rem} from 'components/Styled/utils';
+import TodoCardWrapper from 'components/TodoCardWrapper/TodoCardWrapper';
 import TodoStepList from 'components/TodoStepsList/TodoStepList';
 
-const Wrapper = styled.div`
-    width: 100%;
-    box-sizing: border-box;
-    border: 2px solid ${ colors.DOVE_GREY };
-    border-radius: ${ rem(6) };
-    margin-bottom: ${ rem(16) };
-    padding: ${ rem(20) } ${ rem(16) };
-`;
-Wrapper.displayName = 'Wrapper';
+// const Wrapper = styled.div`
+//     width: 100%;
+//     box-sizing: border-box;
+//     border: 2px solid ${ colors.DOVE_GREY };
+//     border-radius: ${ rem(6) };
+//     margin-bottom: ${ rem(16) };
+//     padding: ${ rem(20) } ${ rem(16) };
+// `;
+// Wrapper.displayName = 'Wrapper';
 
 const HeaderWrapper = styled.div`
     display: flex;
@@ -36,22 +37,6 @@ const CardHeader = Heading2.extend`
     padding: 0 ${ rem(10) } 0 0;
 `;
 CardHeader.displayName = 'CardHeader';
-
-export const Status = Paragraph.extend`
-    flex: 1 1 0px;
-    display: flex;
-    cursor: pointer;
-    align-items: center;
-    padding: 0 ${ rem(5) };
-    border-radius: ${ rem(3) };
-    border: 1px solid ${ colors.DOVE_GREY };
-    justify-content: center;
-    
-    &:hover {
-      border: 1px solid ${ colors.MINE_SHAFT };
-    }
-`;
-Status.displayName = 'Status';
 
 export const Goal = Paragraph.extend`
     cursor: pointer;
@@ -83,14 +68,14 @@ export const TodoCard: React.SFC<IProps> = (props) => {
     };
 
     return (
-        <Wrapper>
+        <TodoCardWrapper>
             <HeaderWrapper>
                 <CardHeader>{todo.title}</CardHeader>
                 <Status onClick={createStatusClickHandler(todo.id)}>{todo.status}</Status>
             </HeaderWrapper>
             <Goal onClick={createGoalClickHandler(todo.id)}>{todo.goal}</Goal>
             {selectedTodoId === todo.id && <TodoStepList steps={todo.steps}/>}
-        </Wrapper>
+        </TodoCardWrapper>
     );
 };
 

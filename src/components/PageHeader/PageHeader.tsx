@@ -1,16 +1,10 @@
 import * as React from 'react';
 
 import styled from 'components/Styled/styledComponents';
-import {defaultTheme, ITheme} from 'components/Styled/themes';
+import {defaultTheme, IHasTheme} from 'components/Styled/themes';
 import {rem} from 'components/Styled/utils';
 
-export interface IPageHeaderProps {
-    theme?: ITheme,
-    className?: string,
-    children: React.ReactNode
-}
-
-const Header: React.SFC<IPageHeaderProps> = props =>
+const Header: React.SFC<IHasTheme> = props =>
     <header className={props.className}>{props.children}</header>;
 
 const PageHeader = styled(Header)`

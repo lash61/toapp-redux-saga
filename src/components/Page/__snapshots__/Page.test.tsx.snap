@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PageHeader renders a themed PageHeader component 1`] = `
-<Header
-  className="sc-bdVaJa iwfSKB"
+exports[`Page renders a themed PageHeader component 1`] = `
+<PageSFC
+  className="sc-bdVaJa kyKWdW"
   theme={
     Object {
       "hoverStatusBorderColor": "#222222",
@@ -18,5 +18,5 @@ exports[`PageHeader renders a themed PageHeader component 1`] = `
   <div>
     Some text here
   </div>
-</Header>
+</PageSFC>
 `;

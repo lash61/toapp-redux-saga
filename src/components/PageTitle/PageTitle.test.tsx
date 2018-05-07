@@ -1,11 +1,12 @@
 import {shallow} from 'enzyme';
 import * as React from 'react';
 
-import PageTitle, {IPageTitleProps} from './PageTitle';
+import {IHasTheme} from 'components/Styled/themes';
+import PageTitle from './PageTitle';
 
 describe('PageTitle', () => {
     it('renders a themed PageTitle component', () => {
-        const props: IPageTitleProps = {
+        const props: IHasTheme = {
             children: 'Some text here'
         };
         const render = shallow(<PageTitle {...props}/>);

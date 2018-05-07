@@ -1,13 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TodoCard renders a component with expanded TodoStepList 1`] = `
-<Wrapper>
+<TodoCardWrapper
+  theme={
+    Object {
+      "hoverStatusBorderColor": "#222222",
+      "pageBackgroundColor": "#ffffff",
+      "pageHeaderBgColor": "#222222",
+      "pageMainTextColor": "#000000",
+      "pageTitleColor": "#ffffff",
+      "statusBorderColor": "#666666",
+      "todoCardBorderColor": "#666666",
+    }
+  }
+>
   <HeaderWrapper>
     <CardHeader>
       Todo title
     </CardHeader>
     <Status
       onClick={[Function]}
+      theme={
+        Object {
+          "hoverStatusBorderColor": "#222222",
+          "pageBackgroundColor": "#ffffff",
+          "pageHeaderBgColor": "#222222",
+          "pageMainTextColor": "#000000",
+          "pageTitleColor": "#ffffff",
+          "statusBorderColor": "#666666",
+          "todoCardBorderColor": "#666666",
+        }
+      }
     >
       COMPLETE
     </Status>
@@ -20,17 +43,40 @@ exports[`TodoCard renders a component with expanded TodoStepList 1`] = `
   <TodoStepList
     steps={Array []}
   />
-</Wrapper>
+</TodoCardWrapper>
 `;
 
 exports[`TodoCard renders a component with non-expanded TodoStepList 1`] = `
-<Wrapper>
+<TodoCardWrapper
+  theme={
+    Object {
+      "hoverStatusBorderColor": "#222222",
+      "pageBackgroundColor": "#ffffff",
+      "pageHeaderBgColor": "#222222",
+      "pageMainTextColor": "#000000",
+      "pageTitleColor": "#ffffff",
+      "statusBorderColor": "#666666",
+      "todoCardBorderColor": "#666666",
+    }
+  }
+>
   <HeaderWrapper>
     <CardHeader>
       Todo title
     </CardHeader>
     <Status
       onClick={[Function]}
+      theme={
+        Object {
+          "hoverStatusBorderColor": "#222222",
+          "pageBackgroundColor": "#ffffff",
+          "pageHeaderBgColor": "#222222",
+          "pageMainTextColor": "#000000",
+          "pageTitleColor": "#ffffff",
+          "statusBorderColor": "#666666",
+          "todoCardBorderColor": "#666666",
+        }
+      }
     >
       COMPLETE
     </Status>
@@ -40,5 +86,5 @@ exports[`TodoCard renders a component with non-expanded TodoStepList 1`] = `
   >
     Goal description
   </Goal>
-</Wrapper>
+</TodoCardWrapper>
 `;

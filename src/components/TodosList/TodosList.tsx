@@ -11,7 +11,7 @@ const Wrapper = styled.div`
     margin: 0 auto;
     align-items: center;
     box-sizing: border-box;
-    padding: 0 ${ rem(20) }
+    padding: 0 ${ rem(20) };
     flex-direction: column;
     max-width: ${ rem(960) };
 `;
