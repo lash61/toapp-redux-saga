@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 import {ActionCreator, AnyAction} from 'redux';
-import styled from 'styled-components';
 
 import todosActions from 'domains/todos/todosActions';
 import {ITodo} from 'domains/todos/todosTypes';
@@ -9,13 +8,14 @@ import {IAppState} from 'domains/types';
 
 import {colors} from 'components/Styled/colors';
 import {Heading2, Paragraph} from 'components/Styled/Styled';
+import styled from 'components/Styled/styledComponents';
 import {rem} from 'components/Styled/utils';
 import TodoStepList from 'components/TodoStepsList/TodoStepList';
 
 const Wrapper = styled.div`
     width: 100%;
     box-sizing: border-box;
-    border: 2px solid ${ colors.GREY };
+    border: 2px solid ${ colors.DOVE_GREY };
     border-radius: ${ rem(6) };
     margin-bottom: ${ rem(16) };
     padding: ${ rem(20) } ${ rem(16) };
@@ -44,11 +44,11 @@ export const Status = Paragraph.extend`
     align-items: center;
     padding: 0 ${ rem(5) };
     border-radius: ${ rem(3) };
-    border: 1px solid ${ colors.GREY };
+    border: 1px solid ${ colors.DOVE_GREY };
     justify-content: center;
     
     &:hover {
-      border: 1px solid ${ colors.DARK_GREY };
+      border: 1px solid ${ colors.MINE_SHAFT };
     }
 `;
 Status.displayName = 'Status';

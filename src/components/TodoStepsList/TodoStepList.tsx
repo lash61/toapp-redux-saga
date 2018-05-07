@@ -1,8 +1,8 @@
 import * as React from 'react';
-import styled from 'styled-components';
 
 import {ITodoStep} from 'domains/todos/todosTypes';
 
+import styled from 'components/Styled/styledComponents';
 import {rem} from 'components/Styled/utils';
 
 export const OrderedList = styled.ol`margin: 0;`;

@@ -1,5 +1,8 @@
 export enum colors {
-    DARK_GREY = '#222222',
-    GREY = '#666666',
-    WHITE = '#ffffff',
+    BLACK = '#000000',
+    MINE_SHAFT = '#222222',
+    DOVE_GREY = '#666666',
+    DUSTY_GREY = '#999999',
+    ALTO = '#dddddd',
+    WHITE = '#ffffff'
 }

@@ -32,11 +32,11 @@ describe('windowDriver', () => {
 
             matchMedia: jest.fn((mediaType: MediaType) => {
                 return {
-                    matches: MediaType.TABLET === mediaType,
-                    media: mediaType,
                     addListener: jest.fn((mql: MediaQueryList) => {
                         mediaQueryListeners.push(mql);
                     }),
+                    matches: MediaType.TABLET === mediaType,
+                    media: mediaType,
                     removeListener: jest.fn((mql: MediaQueryList) => {
                         const index = mediaQueryListeners.indexOf(mql);
                         if (index > -1) {

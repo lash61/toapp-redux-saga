@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageHeader renders a themed PageHeader component 1`] = `
+<Header
+  className="sc-bdVaJa iwfSKB"
+  theme={
+    Object {
+      "pageHeaderBgColor": "#222222",
+      "pageTitleColor": "#ffffff",
+    }
+  }
+>
+  <div>
+    Some text here
+  </div>
+</Header>
+`;

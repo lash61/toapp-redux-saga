@@ -1,8 +1,8 @@
 import * as React from 'react';
-import styled from 'styled-components';
 
-import {colors} from 'components/Styled/colors';
-import {Heading1} from 'components/Styled/Styled';
+import PageHeader from 'components/PageHeader/PageHeader';
+import PageTitle from 'components/PageTitle/PageTitle';
+import styled from 'components/Styled/styledComponents';
 import {rem} from 'components/Styled/utils';
 
 const Page = styled.div`
@@ -11,18 +11,6 @@ const Page = styled.div`
     flex-direction: column;
 `;
 Page.displayName = 'Page';
-
-const PageHeader = styled.header`
-    display: flex;
-    align-items: center;
-    padding: ${ rem(20) };
-    flex: 0 0 ${ rem(40) };
-    background-color: ${ colors.DARK_GREY };
-`;
-PageHeader.displayName = 'PageHeader';
-
-const PageTitle = Heading1.extend`color: ${ colors.WHITE };`;
-PageTitle.displayName = 'PageTitle';
 
 const PageContentHolder = styled.div`
     flex: 1 0 0px;
@@ -47,4 +35,4 @@ const PageLayout: React.SFC<IProps> = (props) => {
     );
 };
 
-export default PageLayout
+export default PageLayout;

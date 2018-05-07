@@ -2,8 +2,22 @@
 
 exports[`PageLayout renders a component 1`] = `
 <Page>
-  <PageHeader>
-    <PageTitle>
+  <PageHeader
+    theme={
+      Object {
+        "pageHeaderBgColor": "#222222",
+        "pageTitleColor": "#ffffff",
+      }
+    }
+  >
+    <PageTitle
+      theme={
+        Object {
+          "pageHeaderBgColor": "#222222",
+          "pageTitleColor": "#ffffff",
+        }
+      }
+    >
       Welcome to TodoApp
     </PageTitle>
   </PageHeader>

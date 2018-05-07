@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'components/Styled/styledComponents';
 import {media, rem} from './utils';
 
 export const Heading1 = styled.h1`

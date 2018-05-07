@@ -1,9 +1,9 @@
 import * as React from 'react';
-import styled from 'styled-components';
 
 import {LoadingStates} from 'domains/loadingStates';
 
 import {colors} from 'components/Styled/colors';
+import styled from 'components/Styled/styledComponents';
 import {rem} from 'components/Styled/utils';
 
 import logo from './logo.svg';
