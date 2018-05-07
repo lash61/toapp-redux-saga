@@ -8,8 +8,6 @@ import {browserHistory} from 'react-router'
 import {syncHistoryWithStore} from 'react-router-redux'
 import {Store} from 'redux';
 
-import {ThemeProvider} from 'components/Styled/styledComponents';
-import {defaultTheme} from 'components/Styled/themes';
 import initStore from 'domains/initStore';
 import {IAppState} from 'domains/types';
 
@@ -20,9 +18,7 @@ const history: History = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
     <Provider store={store}>
-        <ThemeProvider theme={defaultTheme}>
-            <RouterComponent history={history}/>
-        </ThemeProvider>
+        <RouterComponent history={history}/>
     </Provider>,
     document.getElementById('root') as HTMLElement
 );

@@ -1,5 +1,6 @@
 import {RouterState} from 'react-router-redux';
 
+import {ITheme} from 'components/Styled/themes';
 import {MediaType} from 'components/Styled/utils';
 import {LoadingStates} from 'domains/loadingStates';
 import {ITodo} from 'domains/todos/todosTypes';
@@ -16,8 +17,13 @@ export interface IWindowState {
     media: MediaType
 }
 
+export interface IThemeState {
+    theme: ITheme
+}
+
 export interface IAppState {
     routing: RouterState,
     todosState: ITodosState,
-    windowState: IWindowState
+    windowState: IWindowState,
+    themeState: IThemeState
 }
