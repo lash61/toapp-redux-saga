@@ -11,5 +11,8 @@ describe('PageTitle', () => {
         };
         const render = shallow(<PageTitle {...props}/>);
         expect(render.getElement()).toMatchSnapshot();
+
+        const diveRender = shallow(<PageTitle {...props}/>).dive();
+        expect(diveRender.getElement()).toMatchSnapshot();
     });
 });

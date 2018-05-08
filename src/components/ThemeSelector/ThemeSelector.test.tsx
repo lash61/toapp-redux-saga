@@ -2,19 +2,7 @@ import {shallow} from 'enzyme';
 import * as React from 'react';
 
 import {defaultTheme, Theme} from 'components/Styled/themes';
-import ThemeSelector, {IProps, Selector} from './ThemeSelector';
-
-describe('ThemeSelector', () => {
-
-    it('renders a component', () => {
-        const props: IProps = {
-            changeTheme: jest.fn()
-        };
-        const render = shallow(<ThemeSelector {...props}/>);
-        expect(render.getElement()).toMatchSnapshot();
-    });
-
-});
+import ThemeSelector, {IProps} from './ThemeSelector';
 
 describe('Selector', () => {
 
@@ -27,12 +15,12 @@ describe('Selector', () => {
     });
 
     it('renders a component', () => {
-        const render = shallow(<Selector {...props}/>);
+        const render = shallow(<ThemeSelector {...props}/>);
         expect(render.getElement()).toMatchSnapshot();
     });
 
     it('calls changeTheme on change', () => {
-        const render = shallow(<Selector {...props}/>);
+        const render = shallow(<ThemeSelector {...props}/>);
 
         const selectElement = render.find('select');
         const event = {

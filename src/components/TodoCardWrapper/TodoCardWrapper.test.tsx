@@ -11,5 +11,8 @@ describe('PageHeader', () => {
         };
         const render = shallow(<TodoCardWrapper {...props}/>);
         expect(render.getElement()).toMatchSnapshot();
+
+        const diveRender = shallow(<TodoCardWrapper {...props}/>).dive();
+        expect(diveRender.getElement()).toMatchSnapshot();
     });
 });

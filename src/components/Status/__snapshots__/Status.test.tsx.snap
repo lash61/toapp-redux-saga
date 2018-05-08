@@ -1,8 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PageHeader renders a themed PageHeader component 1`] = `
-<Wrapper
-  className="sc-bdVaJa erXgsM"
+exports[`Status renders a component 1`] = `
+<StatusSFC
+  className="sc-bxivhb hmiynL"
+  onClick={[MockFunction]}
   theme={
     Object {
       "hoverStatusBorderColor": "#222222",
@@ -15,18 +16,15 @@ exports[`PageHeader renders a themed PageHeader component 1`] = `
     }
   }
 >
-  <div>
-    Some text here
-  </div>
-</Wrapper>
+  Some text
+</StatusSFC>
 `;
 
-exports[`PageHeader renders a themed PageHeader component 2`] = `
-<div
-  className="sc-bdVaJa erXgsM"
+exports[`Status renders a component 2`] = `
+<styled.p
+  className="sc-bxivhb hmiynL"
+  onClick={[MockFunction]}
 >
-  <div>
-    Some text here
-  </div>
-</div>
+  Some text
+</styled.p>
 `;

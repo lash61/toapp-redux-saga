@@ -18,3 +18,11 @@ exports[`PageTitle renders a themed PageTitle component 1`] = `
   Some text here
 </Title>
 `;
+
+exports[`PageTitle renders a themed PageTitle component 2`] = `
+<styled.h1
+  className="sc-bxivhb eARnsh"
+>
+  Some text here
+</styled.h1>
+`;

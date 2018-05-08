@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {ActionCreator} from 'redux';
 
-import styled from 'components/Styled/styledComponents';
 import {defaultTheme, getThemeByName, getThemeName, IHasTheme, IThemeMeta, themes} from 'components/Styled/themes';
 import {IThemeUpdatedAction} from 'domains/theme/themeActions';
 
@@ -17,7 +16,7 @@ const renderOption = (themeMeta: IThemeMeta) => {
     );
 };
 
-export const Selector: React.SFC<IProps> = (props) => {
+export const ThemeSelector: React.SFC<IProps> = (props) => {
     const themeName = getThemeName(props.theme);
 
     const onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -33,9 +32,7 @@ export const Selector: React.SFC<IProps> = (props) => {
         </div>
     );
 };
-Selector.displayName = 'Selector';
 
-export const ThemeSelector = styled(Selector)`flex: 0 0 0px;`;
 ThemeSelector.defaultProps = {theme: defaultTheme};
 ThemeSelector.displayName = 'ThemeSelector';
 

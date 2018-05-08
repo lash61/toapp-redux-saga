@@ -21,21 +21,3 @@ exports[`Selector renders a component 1`] = `
   </select>
 </div>
 `;
-
-exports[`ThemeSelector renders a component 1`] = `
-<Selector
-  changeTheme={[MockFunction]}
-  className="sc-bdVaJa iloGcu"
-  theme={
-    Object {
-      "hoverStatusBorderColor": "#222222",
-      "pageBackgroundColor": "#ffffff",
-      "pageHeaderBgColor": "#222222",
-      "pageMainTextColor": "#000000",
-      "pageTitleColor": "#ffffff",
-      "statusBorderColor": "#666666",
-      "todoCardBorderColor": "#666666",
-    }
-  }
-/>
-`;

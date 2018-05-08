@@ -20,3 +20,13 @@ exports[`Page renders a themed PageHeader component 1`] = `
   </div>
 </PageSFC>
 `;
+
+exports[`Page renders a themed PageHeader component 2`] = `
+<div
+  className="sc-bdVaJa kyKWdW"
+>
+  <div>
+    Some text here
+  </div>
+</div>
+`;

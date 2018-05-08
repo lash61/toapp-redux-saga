@@ -20,7 +20,7 @@
   "scripts": {
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
-    "test": "react-scripts-ts test --env=jsdom",
+    "test": "react-scripts-ts test --env=jsdom -w 7",
     "eject": "react-scripts-ts eject",
     "koa": "nodemon server/server"
   },

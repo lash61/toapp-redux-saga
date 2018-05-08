@@ -13,16 +13,6 @@ import {rem} from 'components/Styled/utils';
 import TodoCardWrapper from 'components/TodoCardWrapper/TodoCardWrapper';
 import TodoStepList from 'components/TodoStepsList/TodoStepList';
 
-// const Wrapper = styled.div`
-//     width: 100%;
-//     box-sizing: border-box;
-//     border: 2px solid ${ colors.DOVE_GREY };
-//     border-radius: ${ rem(6) };
-//     margin-bottom: ${ rem(16) };
-//     padding: ${ rem(20) } ${ rem(16) };
-// `;
-// Wrapper.displayName = 'Wrapper';
-
 const HeaderWrapper = styled.div`
     display: flex;
     flex-direction: row;
