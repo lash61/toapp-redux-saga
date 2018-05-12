@@ -12,7 +12,7 @@ describe('TodosContainer', () => {
         const todosArray: ITodo[] = [{
             goal: 'Goal',
             id: 'some-id',
-            status: TodoStatus.NOT_STARTED,
+            status: TodoStatus.PENDING,
             steps: [],
             title: 'Title'
         }];

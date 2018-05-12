@@ -28,7 +28,7 @@ export const defaultTheme: ITheme = {
     pageHeaderBgColor: colors.MINE_SHAFT,
     pageTitleColor: colors.WHITE,
 
-    hoverStatusBorderColor: colors.MINE_SHAFT,
+    hoverStatusBorderColor: colors.RED,
     statusBorderColor: colors.DOVE_GREY,
 
     todoCardBorderColor: colors.DOVE_GREY
@@ -41,7 +41,7 @@ export const darkTheme: ITheme = {
     pageHeaderBgColor: colors.ALTO,
     pageTitleColor: colors.BLACK,
 
-    hoverStatusBorderColor: colors.ALTO,
+    hoverStatusBorderColor: colors.CYAN,
     statusBorderColor: colors.DUSTY_GREY,
 
     todoCardBorderColor: colors.DUSTY_GREY

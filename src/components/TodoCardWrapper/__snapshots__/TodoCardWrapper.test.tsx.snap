@@ -5,7 +5,7 @@ exports[`PageHeader renders a themed PageHeader component 1`] = `
   className="sc-bdVaJa erXgsM"
   theme={
     Object {
-      "hoverStatusBorderColor": "#222222",
+      "hoverStatusBorderColor": "#F00000",
       "pageBackgroundColor": "#ffffff",
       "pageHeaderBgColor": "#222222",
       "pageMainTextColor": "#000000",
@@ -22,11 +22,11 @@ exports[`PageHeader renders a themed PageHeader component 1`] = `
 `;
 
 exports[`PageHeader renders a themed PageHeader component 2`] = `
-<div
+<section
   className="sc-bdVaJa erXgsM"
 >
   <div>
     Some text here
   </div>
-</div>
+</section>
 `;

@@ -1,5 +1,5 @@
 export enum TodoStatus {
-    NOT_STARTED = 'NOT_STARTED',
+    PENDING = 'PENDING',
     IN_PROGRESS = 'IN_PROGRESS',
     COMPLETE = 'COMPLETE',
 }

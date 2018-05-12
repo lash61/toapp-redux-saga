@@ -2,11 +2,11 @@
 
 exports[`Status renders a component 1`] = `
 <StatusSFC
-  className="sc-bxivhb hmiynL"
+  className="sc-bxivhb jGwona"
   onClick={[MockFunction]}
   theme={
     Object {
-      "hoverStatusBorderColor": "#222222",
+      "hoverStatusBorderColor": "#F00000",
       "pageBackgroundColor": "#ffffff",
       "pageHeaderBgColor": "#222222",
       "pageMainTextColor": "#000000",
@@ -22,7 +22,7 @@ exports[`Status renders a component 1`] = `
 
 exports[`Status renders a component 2`] = `
 <styled.p
-  className="sc-bxivhb hmiynL"
+  className="sc-bxivhb jGwona"
   onClick={[MockFunction]}
 >
   Some text

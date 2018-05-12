@@ -5,7 +5,7 @@ exports[`PageTitle renders a themed PageTitle component 1`] = `
   className="sc-bxivhb eARnsh"
   theme={
     Object {
-      "hoverStatusBorderColor": "#222222",
+      "hoverStatusBorderColor": "#F00000",
       "pageBackgroundColor": "#ffffff",
       "pageHeaderBgColor": "#222222",
       "pageMainTextColor": "#000000",

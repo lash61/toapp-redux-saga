@@ -5,7 +5,7 @@ exports[`Page renders a themed PageHeader component 1`] = `
   className="sc-bdVaJa kyKWdW"
   theme={
     Object {
-      "hoverStatusBorderColor": "#222222",
+      "hoverStatusBorderColor": "#F00000",
       "pageBackgroundColor": "#ffffff",
       "pageHeaderBgColor": "#222222",
       "pageMainTextColor": "#000000",

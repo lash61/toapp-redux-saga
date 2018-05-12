@@ -10,14 +10,14 @@ const getTodoById = (todoId) => {
 };
 
 const getNextStatus = (todoStatus) => {
-    if (todoStatus === 'NOT_STARTED') {
+    if (todoStatus === 'PENDING') {
         return 'IN_PROGRESS';
     }
     if (todoStatus === 'IN_PROGRESS') {
         return 'COMPLETE';
     }
     if (todoStatus === 'COMPLETE') {
-        return 'NOT_STARTED';
+        return 'PENDING';
     }
 };
 

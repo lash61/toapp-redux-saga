@@ -4,7 +4,7 @@ exports[`TodoCard renders a component with expanded TodoStepList 1`] = `
 <TodoCardWrapper
   theme={
     Object {
-      "hoverStatusBorderColor": "#222222",
+      "hoverStatusBorderColor": "#F00000",
       "pageBackgroundColor": "#ffffff",
       "pageHeaderBgColor": "#222222",
       "pageMainTextColor": "#000000",
@@ -22,7 +22,7 @@ exports[`TodoCard renders a component with expanded TodoStepList 1`] = `
       onClick={[Function]}
       theme={
         Object {
-          "hoverStatusBorderColor": "#222222",
+          "hoverStatusBorderColor": "#F00000",
           "pageBackgroundColor": "#ffffff",
           "pageHeaderBgColor": "#222222",
           "pageMainTextColor": "#000000",
@@ -50,7 +50,7 @@ exports[`TodoCard renders a component with non-expanded TodoStepList 1`] = `
 <TodoCardWrapper
   theme={
     Object {
-      "hoverStatusBorderColor": "#222222",
+      "hoverStatusBorderColor": "#F00000",
       "pageBackgroundColor": "#ffffff",
       "pageHeaderBgColor": "#222222",
       "pageMainTextColor": "#000000",
@@ -68,7 +68,7 @@ exports[`TodoCard renders a component with non-expanded TodoStepList 1`] = `
       onClick={[Function]}
       theme={
         Object {
-          "hoverStatusBorderColor": "#222222",
+          "hoverStatusBorderColor": "#F00000",
           "pageBackgroundColor": "#ffffff",
           "pageHeaderBgColor": "#222222",
           "pageMainTextColor": "#000000",

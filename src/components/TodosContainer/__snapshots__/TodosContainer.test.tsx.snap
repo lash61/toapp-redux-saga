@@ -10,7 +10,7 @@ exports[`TodosContainer renders a component 1`] = `
         Object {
           "goal": "Goal",
           "id": "some-id",
-          "status": "NOT_STARTED",
+          "status": "PENDING",
           "steps": Array [],
           "title": "Title",
         },

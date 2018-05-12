@@ -11,7 +11,7 @@ import ThemeSelector from 'components/ThemeSelector/ThemeSelector';
 import themeActions, {IThemeUpdatedAction} from 'domains/theme/themeActions';
 import {IAppState} from 'domains/types';
 
-const PageContentHolder = styled.div`
+const PageContentHolder = styled.main`
     flex: 1 0 0px;
     overflow-y: scroll;
 `;

@@ -5,7 +5,7 @@ import {defaultTheme, IHasTheme} from 'components/Styled/themes';
 import {rem} from 'components/Styled/utils';
 
 const Wrapper: React.SFC<IHasTheme> = props =>
-    <div className={props.className}>{props.children}</div>;
+    <section className={props.className}>{props.children}</section>;
 
 const TodoCardWrapper = styled(Wrapper)`
     width: 100%;
