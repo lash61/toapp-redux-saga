@@ -2,17 +2,7 @@
 
 exports[`TodoCard renders a component with expanded TodoStepList 1`] = `
 <TodoCardWrapper
-  theme={
-    Object {
-      "hoverStatusBorderColor": "#F00000",
-      "pageBackgroundColor": "#ffffff",
-      "pageHeaderBgColor": "#222222",
-      "pageMainTextColor": "#000000",
-      "pageTitleColor": "#ffffff",
-      "statusBorderColor": "#666666",
-      "todoCardBorderColor": "#666666",
-    }
-  }
+  theme={[ThemeObject]}
 >
   <HeaderWrapper>
     <CardHeader>
@@ -20,17 +10,7 @@ exports[`TodoCard renders a component with expanded TodoStepList 1`] = `
     </CardHeader>
     <Status
       onClick={[Function]}
-      theme={
-        Object {
-          "hoverStatusBorderColor": "#F00000",
-          "pageBackgroundColor": "#ffffff",
-          "pageHeaderBgColor": "#222222",
-          "pageMainTextColor": "#000000",
-          "pageTitleColor": "#ffffff",
-          "statusBorderColor": "#666666",
-          "todoCardBorderColor": "#666666",
-        }
-      }
+      theme={[ThemeObject]}
     >
       COMPLETE
     </Status>
@@ -48,17 +28,7 @@ exports[`TodoCard renders a component with expanded TodoStepList 1`] = `
 
 exports[`TodoCard renders a component with non-expanded TodoStepList 1`] = `
 <TodoCardWrapper
-  theme={
-    Object {
-      "hoverStatusBorderColor": "#F00000",
-      "pageBackgroundColor": "#ffffff",
-      "pageHeaderBgColor": "#222222",
-      "pageMainTextColor": "#000000",
-      "pageTitleColor": "#ffffff",
-      "statusBorderColor": "#666666",
-      "todoCardBorderColor": "#666666",
-    }
-  }
+  theme={[ThemeObject]}
 >
   <HeaderWrapper>
     <CardHeader>
@@ -66,17 +36,7 @@ exports[`TodoCard renders a component with non-expanded TodoStepList 1`] = `
     </CardHeader>
     <Status
       onClick={[Function]}
-      theme={
-        Object {
-          "hoverStatusBorderColor": "#F00000",
-          "pageBackgroundColor": "#ffffff",
-          "pageHeaderBgColor": "#222222",
-          "pageMainTextColor": "#000000",
-          "pageTitleColor": "#ffffff",
-          "statusBorderColor": "#666666",
-          "todoCardBorderColor": "#666666",
-        }
-      }
+      theme={[ThemeObject]}
     >
       COMPLETE
     </Status>

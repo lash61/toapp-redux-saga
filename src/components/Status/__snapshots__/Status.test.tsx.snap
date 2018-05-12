@@ -4,17 +4,7 @@ exports[`Status renders a component 1`] = `
 <StatusSFC
   className="sc-bxivhb jGwona"
   onClick={[MockFunction]}
-  theme={
-    Object {
-      "hoverStatusBorderColor": "#F00000",
-      "pageBackgroundColor": "#ffffff",
-      "pageHeaderBgColor": "#222222",
-      "pageMainTextColor": "#000000",
-      "pageTitleColor": "#ffffff",
-      "statusBorderColor": "#666666",
-      "todoCardBorderColor": "#666666",
-    }
-  }
+  theme={[ThemeObject]}
 >
   Some text
 </StatusSFC>
