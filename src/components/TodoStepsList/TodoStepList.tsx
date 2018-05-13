@@ -28,7 +28,7 @@ const Bold = styled.span`
 Bold.displayName = 'Bold';
 
 export interface IProps {
-    steps: ITodoStep[],
+    steps: ITodoStep[]
 }
 
 const TodoStepList: React.SFC<IProps> = (props) => {

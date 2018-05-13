@@ -10,6 +10,10 @@ export enum MediaType {
     DESKTOP = 'only screen and (min-width: 1024px)'
 }
 
+export interface IHasMediaType {
+    mediaType: MediaType
+}
+
 const createMediaWrapper = (mediaType: MediaType) =>
     (strings: TemplateStringsArray, ...interpolations: SimpleInterpolation[]) =>
         css`@media ${mediaType} { ${ css(strings, ...interpolations) } }`;

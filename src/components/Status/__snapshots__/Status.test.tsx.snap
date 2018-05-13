@@ -1,20 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Status renders a component 1`] = `
-<StatusSFC
-  className="sc-bxivhb jGwona"
+exports[`Status renders a component for DESKTOP 1`] = `
+<Styled(StatusSFC)
   onClick={[MockFunction]}
-  theme={[ThemeObject]}
->
-  Some text
-</StatusSFC>
+  status="PENDING"
+/>
 `;
 
-exports[`Status renders a component 2`] = `
-<styled.p
-  className="sc-bxivhb jGwona"
+exports[`Status renders a component for DESKTOP 2`] = `
+<StatusSFC
+  className="sc-bxivhb cJLLkm"
   onClick={[MockFunction]}
->
-  Some text
-</styled.p>
+  status="PENDING"
+/>
 `;
+
+exports[`Status renders a component for MOBILE 1`] = `<div />`;

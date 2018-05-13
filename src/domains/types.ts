@@ -14,7 +14,7 @@ export interface ITodosState {
 
 export interface IWindowState {
     windowDimensions: IWindowDimensions,
-    media: MediaType
+    mediaType: MediaType
 }
 
 export interface IThemeState {

@@ -1,10 +1,11 @@
 import {shallow} from 'enzyme';
 import * as React from 'react';
 
+import Status from 'components/Status/Status';
+import {MediaType} from 'components/Styled/utils';
+import TodoStepList from 'components/TodoStepsList/TodoStepList';
 import {TodoStatus} from 'domains/todos/todosTypes';
 
-import Status from 'components/Status/Status';
-import TodoStepList from 'components/TodoStepsList/TodoStepList';
 import {Goal, IProps, TodoCard} from './TodoCard';
 
 describe('TodoCard', () => {
@@ -13,6 +14,7 @@ describe('TodoCard', () => {
     beforeEach(() => {
         defaultProps = {
             selectTodo: jest.fn(),
+            mediaType: MediaType.DESKTOP,
             selectedTodoId: '',
             todo: {
                 goal: 'Goal description',

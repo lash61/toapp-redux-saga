@@ -9,7 +9,7 @@ import {IAppState} from 'domains/types';
 import Status from 'components/Status/Status';
 import {Heading2, Paragraph} from 'components/Styled/Styled';
 import styled from 'components/Styled/styledComponents';
-import {rem} from 'components/Styled/utils';
+import {IHasMediaType, rem} from 'components/Styled/utils';
 import TodoCardWrapper from 'components/TodoCardWrapper/TodoCardWrapper';
 import TodoStepList from 'components/TodoStepsList/TodoStepList';
 
@@ -39,15 +39,15 @@ export const Goal = Paragraph.extend`
 `;
 Goal.displayName = 'Goal';
 
-export interface IProps {
+export interface IProps extends IHasMediaType {
     todo: ITodo;
     selectedTodoId: string;
-    selectTodo: ActionCreator<AnyAction>,
+    selectTodo: ActionCreator<AnyAction>;
     updateTodoStatus: ActionCreator<AnyAction>
 }
 
 export const TodoCard: React.SFC<IProps> = (props) => {
-    const {todo, selectedTodoId, selectTodo, updateTodoStatus} = props;
+    const {todo, selectedTodoId, selectTodo, updateTodoStatus, mediaType} = props;
 
     const createGoalClickHandler = (todoId: string) => () => {
         selectTodo(todoId);
@@ -61,7 +61,7 @@ export const TodoCard: React.SFC<IProps> = (props) => {
         <TodoCardWrapper>
             <HeaderWrapper>
                 <CardHeader>{todo.title}</CardHeader>
-                <Status onClick={createStatusClickHandler(todo.id)}>{todo.status}</Status>
+                <Status onClick={createStatusClickHandler(todo.id)} status={todo.status} mediaType={mediaType}/>
             </HeaderWrapper>
             <Goal onClick={createGoalClickHandler(todo.id)}>{todo.goal}</Goal>
             {selectedTodoId === todo.id && <TodoStepList steps={todo.steps}/>}
@@ -71,6 +71,7 @@ export const TodoCard: React.SFC<IProps> = (props) => {
 
 const mapStateToProps = (state: IAppState) => {
     return {
+        mediaType: state.windowState.mediaType,
         selectedTodoId: state.todosState.selectedTodoId
     };
 };
