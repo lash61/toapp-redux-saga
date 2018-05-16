@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Status renders a component for DESKTOP 1`] = `
-<Styled(StatusSFC)
+<StatusBadge
   onClick={[MockFunction]}
-  status="PENDING"
-/>
+  theme={[ThemeObject]}
+>
+  PENDING
+</StatusBadge>
 `;
 
-exports[`Status renders a component for DESKTOP 2`] = `
-<StatusSFC
-  className="sc-bxivhb cJLLkm"
+exports[`Status renders a component for MOBILE 1`] = `
+<StatusIcon
   onClick={[MockFunction]}
   status="PENDING"
+  theme={[ThemeObject]}
 />
 `;
-
-exports[`Status renders a component for MOBILE 1`] = `<div />`;

@@ -5,6 +5,8 @@ import {IHasMediaType, MediaType} from 'components/Styled/utils';
 import {TodoStatus} from 'domains/todos/todosTypes';
 
 import Status, {ITodoStatusProps} from './Status';
+import StatusBadge from './StatusBadge';
+import StatusIcon from './StatusIcon';
 
 describe('Status', () => {
 
@@ -19,16 +21,15 @@ describe('Status', () => {
 
     it('renders a component for DESKTOP', () => {
         const render = shallow(<Status {...props}/>);
-        expect(render.getElement()).toMatchSnapshot();
 
-        const diveRender = shallow(<Status {...props}/>).dive();
-        expect(diveRender.getElement()).toMatchSnapshot();
+        expect(render.find(StatusBadge).exists()).toBe(true);
+        expect(render.getElement()).toMatchSnapshot();
     });
 
     it('renders a component for MOBILE', () => {
         props.mediaType = MediaType.MOBILE;
-
         const render = shallow(<Status {...props}/>);
+        expect(render.find(StatusIcon).exists()).toBe(true);
         expect(render.getElement()).toMatchSnapshot();
     });
 
