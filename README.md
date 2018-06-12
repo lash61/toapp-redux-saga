@@ -6,6 +6,7 @@ My goals are to familiarize myself with:
     - redux-saga, as a means of handling requests to the backend and other side-efffects;
     - styled-components for it's approach to applying visuals to components;
     - some koa backend, especially launch scripts and routing;
+    - e2e tests with testCafe;
     
 I'm trying to maintain a reasonable level of test coverage in the front-end.
 Redux-saga and styled-components bring in some special testing techniques and patterns.
@@ -25,6 +26,7 @@ Every call to the backend has some latency applied to it, to make it feel more l
 This project has been bootstrapped with Create-React-App using `--scripts-version=react-scripts-ts`
 
 ## How to run
-To run the app first start the backend by executing `yarn koa` from the cmd. Backend will be launched on port 8090.
-Then execute `yarn start` from another instance of cmd. Frontend will be launched on port 3000.
+To run the app first start the backend by executing `yarn koa` from the cmd. Backend will be launched on localhost port 8090.
+Then execute `yarn start` from another instance of cmd. Frontend will be launched on localhost port 3000.
+In order to run e2e tests first start the app and execute `yarn e2e` in a separate cmd.
 As with all apps that use react-scripts, there are other actions available through cmd.
