@@ -2,6 +2,7 @@
 
 exports[`Status renders a component for DESKTOP 1`] = `
 <StatusBadge
+  data-role="todo-card-status-0"
   onClick={[MockFunction]}
   theme={[ThemeObject]}
 >
@@ -11,6 +12,7 @@ exports[`Status renders a component for DESKTOP 1`] = `
 
 exports[`Status renders a component for MOBILE 1`] = `
 <StatusIcon
+  data-role="todo-card-status-0"
   onClick={[MockFunction]}
   status="PENDING"
   theme={[ThemeObject]}

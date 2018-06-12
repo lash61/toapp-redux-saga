@@ -42,12 +42,13 @@ Goal.displayName = 'Goal';
 export interface IProps extends IHasMediaType {
     todo: ITodo;
     selectedTodoId: string;
+    index: number,
     selectTodo: ActionCreator<AnyAction>;
     updateTodoStatus: ActionCreator<AnyAction>
 }
 
 export const TodoCard: React.SFC<IProps> = (props) => {
-    const {todo, selectedTodoId, selectTodo, updateTodoStatus, mediaType} = props;
+    const {todo, selectedTodoId, selectTodo, updateTodoStatus, mediaType, index} = props;
 
     const createGoalClickHandler = (todoId: string) => () => {
         selectTodo(todoId);
@@ -61,10 +62,18 @@ export const TodoCard: React.SFC<IProps> = (props) => {
         <TodoCardWrapper>
             <HeaderWrapper>
                 <CardHeader>{todo.title}</CardHeader>
-                <Status onClick={createStatusClickHandler(todo.id)} status={todo.status} mediaType={mediaType}/>
+                <Status onClick={createStatusClickHandler(todo.id)}
+                        status={todo.status}
+                        mediaType={mediaType}
+                        dataRole={`todo-card-status-${ index }`}
+                />
             </HeaderWrapper>
-            <Goal onClick={createGoalClickHandler(todo.id)}>{todo.goal}</Goal>
-            {selectedTodoId === todo.id && <TodoStepList steps={todo.steps}/>}
+            <Goal onClick={createGoalClickHandler(todo.id)}
+                  data-role={`todo-card-goal-${index}`}>
+                {todo.goal}
+            </Goal>
+            {selectedTodoId === todo.id &&
+             <TodoStepList steps={todo.steps} dataRole={`todo-card-step-list-${index}`}/>}
         </TodoCardWrapper>
     );
 };

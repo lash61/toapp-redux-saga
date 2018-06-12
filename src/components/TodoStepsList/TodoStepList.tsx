@@ -28,13 +28,14 @@ const Bold = styled.span`
 Bold.displayName = 'Bold';
 
 export interface IProps {
-    steps: ITodoStep[]
+    steps: ITodoStep[],
+    dataRole: string
 }
 
 const TodoStepList: React.SFC<IProps> = (props) => {
-    const {steps} = props;
+    const {steps, dataRole} = props;
     return (
-        <OrderedList>
+        <OrderedList data-role={ dataRole }>
             {steps.map((step: ITodoStep) => {
                 return <ListItem key={step.id}>
                     <Bold>{step.title}:</Bold>

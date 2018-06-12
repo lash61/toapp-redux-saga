@@ -15,7 +15,8 @@ describe('Status', () => {
         props = {
             mediaType: MediaType.DESKTOP,
             status: TodoStatus.PENDING,
-            onClick: jest.fn()
+            onClick: jest.fn(),
+            dataRole: 'todo-card-status-0'
         };
     });
 

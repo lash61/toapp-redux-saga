@@ -24,9 +24,9 @@ export interface IProps {
 const TodosList: React.SFC<IProps> = (props) => {
     const {todos} = props;
     return (
-        <Wrapper>
-            {todos.map((todo: ITodo) =>
-                <TodoCard todo={todo} key={todo.id}/>
+        <Wrapper data-role="todo-list-wrapper">
+            {todos.map((todo: ITodo, index: number) =>
+                <TodoCard todo={todo} key={todo.id} index={index}/>
             )}
         </Wrapper>
     );

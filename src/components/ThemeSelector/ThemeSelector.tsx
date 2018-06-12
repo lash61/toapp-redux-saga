@@ -26,7 +26,7 @@ export const ThemeSelector: React.SFC<IProps> = (props) => {
 
     return (
         <div className={props.className}>
-            <select value={themeName} onChange={onChange}>
+            <select value={themeName} onChange={onChange} data-role="theme-selector">
                 {themes.map(renderOption)}
             </select>
         </div>

@@ -68,6 +68,11 @@ export const getThemeByName = (themeName: string) => {
     return themeMeta && themeMeta.theme;
 };
 
+export const getThemeLabelByName = (themeName: string) => {
+    const themeMeta = R.find(R.propEq('name', themeName))(themes);
+    return themeMeta && themeMeta.label;
+};
+
 export const getThemeName = (theme?: ITheme) => {
     const themeMeta = R.find(R.propEq('theme', theme))(themes);
     return themeMeta && themeMeta.name;

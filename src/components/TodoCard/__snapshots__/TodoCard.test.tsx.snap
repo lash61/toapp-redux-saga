@@ -9,6 +9,7 @@ exports[`TodoCard renders a component with expanded TodoStepList 1`] = `
       Todo title
     </CardHeader>
     <Status
+      dataRole="todo-card-status-0"
       mediaType="only screen and (min-width: 1024px)"
       onClick={[Function]}
       status="COMPLETE"
@@ -16,11 +17,13 @@ exports[`TodoCard renders a component with expanded TodoStepList 1`] = `
     />
   </HeaderWrapper>
   <Goal
+    data-role="todo-card-goal-0"
     onClick={[Function]}
   >
     Goal description
   </Goal>
   <TodoStepList
+    dataRole="todo-card-step-list-0"
     steps={Array []}
   />
 </TodoCardWrapper>
@@ -35,6 +38,7 @@ exports[`TodoCard renders a component with non-expanded TodoStepList 1`] = `
       Todo title
     </CardHeader>
     <Status
+      dataRole="todo-card-status-0"
       mediaType="only screen and (min-width: 1024px)"
       onClick={[Function]}
       status="COMPLETE"
@@ -42,6 +46,7 @@ exports[`TodoCard renders a component with non-expanded TodoStepList 1`] = `
     />
   </HeaderWrapper>
   <Goal
+    data-role="todo-card-goal-0"
     onClick={[Function]}
   >
     Goal description

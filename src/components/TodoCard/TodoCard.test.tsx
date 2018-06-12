@@ -16,6 +16,7 @@ describe('TodoCard', () => {
             selectTodo: jest.fn(),
             mediaType: MediaType.DESKTOP,
             selectedTodoId: '',
+            index: 0,
             todo: {
                 goal: 'Goal description',
                 id: 'some-id',

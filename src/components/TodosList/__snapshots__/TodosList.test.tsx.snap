@@ -1,8 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TogoList renders a component 1`] = `
-<Wrapper>
+<Wrapper
+  data-role="todo-list-wrapper"
+>
   <Connect(Component)
+    index={0}
     todo={
       Object {
         "goal": "First goal description",
@@ -14,6 +17,7 @@ exports[`TogoList renders a component 1`] = `
     }
   />
   <Connect(Component)
+    index={1}
     todo={
       Object {
         "goal": "Second goal description",

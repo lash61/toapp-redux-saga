@@ -10,14 +10,15 @@ import StatusIcon from './StatusIcon';
 export interface ITodoStatusProps extends IHasTheme {
     status: TodoStatus;
     onClick: () => void;
+    dataRole?: string;
 }
 
 const Status: React.SFC<ITodoStatusProps & IHasMediaType> = props => {
-    const {mediaType, status, onClick} = props;
+    const {mediaType, status, onClick, dataRole} = props;
     if (mediaType === MediaType.MOBILE) {
-        return <StatusIcon status={status} onClick={onClick}/>;
+        return <StatusIcon status={status} onClick={onClick} data-role={ dataRole } />;
     }
-    return <StatusBadge onClick={onClick}>{status}</StatusBadge>;
+    return <StatusBadge onClick={onClick} data-role={ dataRole }>{status}</StatusBadge>;
 };
 
 Status.defaultProps = {theme: defaultTheme};

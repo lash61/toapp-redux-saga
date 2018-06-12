@@ -13,7 +13,8 @@ describe('TodoStepList', () => {
                 details: 'Step details',
                 id: 'todo-3-step-1',
                 title: 'Step tile'
-            }]
+            }],
+            dataRole: 'todo-card-step-list-0'
         }
     });
 

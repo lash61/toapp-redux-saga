@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TodoStepList renders a component 1`] = `
-<OrderedList>
+<OrderedList
+  data-role="todo-card-step-list-0"
+>
   <ListItem>
     <Bold>
       Step tile

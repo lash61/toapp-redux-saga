@@ -22,7 +22,7 @@
     "node_modules",
     "build",
     "scripts",
-    "acceptance-tests",
+    "e2e",
     "webpack",
     "jest",
     "src/setupTests.ts"
