@@ -1,12 +1,14 @@
 const R = require('ramda');
-const todoList = require('./todoList');
+const db = require('./db');
+
+const todoList = db.getCollection('todoList')
 
 const getTodoList = () => {
-    return todoList;
+    return todoList.data;
 };
 
 const getTodoById = (todoId) => {
-    return R.find(R.propEq('id', todoId))(todoList)
+    return todoList.findOne({id: todoId});
 };
 
 const getNextStatus = (todoStatus) => {
@@ -22,9 +24,10 @@ const getNextStatus = (todoStatus) => {
 };
 
 const switchStatusForTodo = (todoId) => {
-    const todoItem = R.find(R.propEq('id', todoId))(todoList);
-    todoItem.status = getNextStatus(todoItem.status);
-    return todoList;
+    todoList.findAndUpdate({id: todoId}, (todoItem) => {
+        todoItem.status = getNextStatus(todoItem.status);
+    });
+    return todoList.data;
 };
 
 const service = {

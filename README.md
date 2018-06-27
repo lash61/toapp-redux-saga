@@ -7,6 +7,7 @@ My goals are to familiarize myself with:
     - styled-components for it's approach to applying visuals to components;
     - some koa backend, especially launch scripts and routing;
     - e2e tests with testCafe;
+    - lokijs javascript database
     
 I'm trying to maintain a reasonable level of test coverage in the front-end.
 Redux-saga and styled-components bring in some special testing techniques and patterns.
