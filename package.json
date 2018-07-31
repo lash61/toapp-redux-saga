@@ -18,8 +18,8 @@
     "styled-components": "^3.2.6"
   },
   "scripts": {
-    "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
+    "start": "cross-env REACT_APP_VERSION=$npm_package_version react-scripts-ts start",
+    "build": "cross-env REACT_APP_VERSION=$npm_package_version react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom -w 7",
     "e2e": "testcafe chrome e2e/*.test.ts",
     "eject": "react-scripts-ts eject",
@@ -38,6 +38,7 @@
     "@types/react-redux": "^5.0.16",
     "@types/react-router": "3.0.15",
     "@types/react-router-redux": "4.0.51",
+    "cross-env": "^5.2.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest-styled-components": "^5.0.1",

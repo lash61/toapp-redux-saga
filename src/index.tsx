@@ -13,6 +13,8 @@ import {IAppState} from 'domains/types';
 
 import RouterComponent from 'components/RouterComponent/RouterComponent';
 
+console.log('Build version: ', process.env.REACT_APP_VERSION);
+
 const store: Store<IAppState> = initStore();
 const history: History = syncHistoryWithStore(browserHistory, store);
 
@@ -22,4 +24,3 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root') as HTMLElement
 );
-
