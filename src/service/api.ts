@@ -1,4 +1,7 @@
-import {ITodo} from 'domains/todos/todosTypes';
+import * as t from 'io-ts';
+
+import {ITodo, TodoType} from 'domains/todos/todosTypes';
+import {decode} from './apiValidation';
 
 enum RequestMethods {
     GET = 'GET',
@@ -16,23 +19,24 @@ const request = (method: RequestMethods, resource: string, body?: string) => {
         body,
         method,
         mode: 'cors'
-    }).then((response: Response) => {
-        return response.json();
-    });
+    }).then(response => response.json());
 };
 
 const apiFactory = (): IApiService => {
     return {
-        loadTodoList: () => {
-            return request(RequestMethods.GET, '/todoList/');
+        loadTodoList: (): Promise<ITodo[]> => {
+            return request(RequestMethods.GET, '/todoList/')
+                .then(decode<ITodo[]>(t.array(TodoType)));
         },
 
-        loadTodo: (todoId: string) => {
+        loadTodo: (todoId: string): Promise<ITodo> => {
             return request(RequestMethods.GET, `/todoList/${todoId}`)
+                .then(decode<ITodo>(TodoType));
         },
 
-        updateTodoStatus: (todoId: string) => {
+        updateTodoStatus: (todoId: string): Promise<ITodo[]> => {
             return request(RequestMethods.POST, `/todoList/${todoId}/updateStatus`)
+                .then(decode<ITodo[]>(t.array(TodoType)));
         }
     }
 };
