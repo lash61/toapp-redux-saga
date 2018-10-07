@@ -16,7 +16,8 @@
     "redux": "^3.7.2",
     "redux-saga": "^0.16.0",
     "redux-thunk": "^2.2.0",
-    "styled-components": "^3.2.6"
+    "styled-components": "^3.2.6",
+    "typesafe-actions": "^2.0.4"
   },
   "scripts": {
     "start": "cross-env REACT_APP_VERSION=$npm_package_version react-scripts-ts start",

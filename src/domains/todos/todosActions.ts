@@ -1,72 +1,28 @@
-import {ActionCreator, AnyAction} from 'redux';
+import {ActionType, createStandardAction} from 'typesafe-actions';
 
 import {ITodo} from 'domains/todos/todosTypes';
 
-export enum TodosActions {
-    LOAD_TODOS = 'LOAD_TODOS',
-    LOAD_TODOS_PENDING = 'LOAD_TODOS_PENDING',
-    LOAD_TODOS_SUCCESS = 'LOAD_TODOS_SUCCESS',
-    LOAD_TODOS_ERROR = 'LOAD_TODOS_ERROR',
+const loadTodos = createStandardAction('todos/load')();
+const loadTodosPending = createStandardAction('todos/load-pending')();
+const loadTodosSuccess = createStandardAction('todos/load-success')<ITodo[]>();
+const loadTodosError = createStandardAction('todos/load-error')();
 
-    SELECT_TODO = 'SELECT_TODO',
+const selectTodo = createStandardAction('todos/select-todo')<string>();
 
-    UPDATE_STATUS = 'UPDATE_STATUS',
-    UPDATE_STATUS_PENDING = 'UPDATE_STATUS_PENDING',
-    UPDATE_STATUS_SUCCESS = 'UPDATE_STATUS_SUCCESS',
-    UPDATE_STATUS_ERROR = 'UPDATE_STATUS_ERROR',
-}
+const updateTodoStatus = createStandardAction('todo/update-status')<string>();
+const updateTodoStatusPending = createStandardAction('todo/update-status-pending')();
+const updateTodoStatusSuccess = createStandardAction('todo/update-status-success')<ITodo[]>();
+const updateTodoStatusError = createStandardAction('todo/update-status-error')();
 
-export interface ILoadTodosSuccessAction extends AnyAction {
-    payload: ITodo[];
-}
-
-const loadTodos: ActionCreator<AnyAction> = () => {
-    return {type: TodosActions.LOAD_TODOS};
-};
-
-const loadTodosPending: ActionCreator<AnyAction> = () => {
-    return {type: TodosActions.LOAD_TODOS_PENDING};
-};
-
-const loadTodosSuccess: ActionCreator<ILoadTodosSuccessAction> = (todos: ITodo[]) => {
-    return {
-        payload: todos,
-        type: TodosActions.LOAD_TODOS_SUCCESS
-    };
-};
-
-const loadTodosError: ActionCreator<AnyAction> = () => {
-    return {type: TodosActions.LOAD_TODOS_ERROR};
-};
-
-const selectTodo: ActionCreator<AnyAction> = (todoId: string) => {
-    return {
-        payload: todoId,
-        type: TodosActions.SELECT_TODO
-    };
-};
-
-const updateTodoStatus: ActionCreator<AnyAction> = (todoId: string) => {
-    return {
-        payload: todoId,
-        type: TodosActions.UPDATE_STATUS
-    };
-};
-
-const updateTodoStatusPending: ActionCreator<AnyAction> = () => {
-    return {type: TodosActions.UPDATE_STATUS_PENDING};
-};
-
-const updateTodoStatusSuccess: ActionCreator<ILoadTodosSuccessAction> = (todos: ITodo[]) => {
-    return {
-        payload: todos,
-        type: TodosActions.UPDATE_STATUS_SUCCESS
-    };
-};
-
-const updateTodoStatusError: ActionCreator<AnyAction> = () => {
-    return {type: TodosActions.UPDATE_STATUS_ERROR};
-};
+export type TodosAction = ActionType<typeof loadTodos
+    | typeof loadTodosPending
+    | typeof loadTodosSuccess
+    | typeof loadTodosError
+    | typeof selectTodo
+    | typeof updateTodoStatus
+    | typeof updateTodoStatusPending
+    | typeof updateTodoStatusSuccess
+    | typeof updateTodoStatusError>;
 
 export default {
     loadTodos,

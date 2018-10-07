@@ -1,14 +1,14 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
-import {ActionCreator} from 'redux';
+import {PayloadAction} from 'typesafe-actions/dist/types';
 
 import Page from 'components/Page/Page';
 import PageHeader from 'components/PageHeader/PageHeader';
 import PageTitle from 'components/PageTitle/PageTitle';
 import styled, {ThemeProvider} from 'components/Styled/styledComponents';
-import {IHasTheme} from 'components/Styled/themes';
+import {IHasTheme, ITheme} from 'components/Styled/themes';
 import ThemeSelector from 'components/ThemeSelector/ThemeSelector';
-import themeActions, {IThemeUpdatedAction} from 'domains/theme/themeActions';
+import themeActions from 'domains/theme/themeActions';
 import {IAppState} from 'domains/types';
 
 const PageContentHolder = styled.main`
@@ -18,7 +18,7 @@ const PageContentHolder = styled.main`
 PageContentHolder.displayName = 'PageContentHolder';
 
 export interface IProps extends IHasTheme {
-    changeTheme: ActionCreator<IThemeUpdatedAction>
+    changeTheme: (theme: ITheme) => PayloadAction<'theme/update', ITheme>;
 }
 
 export const PageLayout: React.SFC<IProps> = (props) => {

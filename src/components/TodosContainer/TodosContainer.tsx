@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
-import {ActionCreator, AnyAction} from 'redux';
+import {EmptyAction} from 'typesafe-actions/dist/types';
 
 import {LoadingStates} from 'domains/loadingStates';
 import todosActions from 'domains/todos/todosActions';
@@ -13,12 +13,13 @@ import TodosList from 'components/TodosList/TodosList';
 interface IProps {
     loadingState: LoadingStates,
     todos: ITodo[],
-    loadTodos: ActionCreator<AnyAction>
+    loadTodos: () => EmptyAction<'todos/load'>;
 }
 
 export class TodosContainer extends React.Component<IProps> {
 
     public componentDidMount() {
+
         this.props.loadTodos();
     }
 

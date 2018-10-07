@@ -1,11 +1,18 @@
 import * as React from 'react';
-import {ActionCreator} from 'redux';
+import {PayloadAction} from 'typesafe-actions/dist/types';
 
-import {defaultTheme, getThemeByName, getThemeName, IHasTheme, IThemeMeta, themes} from 'components/Styled/themes';
-import {IThemeUpdatedAction} from 'domains/theme/themeActions';
+import {
+    defaultTheme,
+    getThemeByName,
+    getThemeName,
+    IHasTheme,
+    ITheme,
+    IThemeMeta,
+    themes
+} from 'components/Styled/themes';
 
 export interface IProps extends IHasTheme {
-    changeTheme: ActionCreator<IThemeUpdatedAction>
+    changeTheme: (theme: ITheme) => PayloadAction<'theme/update', ITheme>;
 }
 
 const renderOption = (themeMeta: IThemeMeta) => {

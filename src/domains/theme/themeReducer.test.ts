@@ -1,4 +1,5 @@
 import {darkTheme, defaultTheme} from 'components/Styled/themes';
+import { initAction } from 'domains/rootReducer';
 
 import themeActions from './themeActions';
 import {theme} from './themeReducer';
@@ -6,7 +7,7 @@ import {theme} from './themeReducer';
 describe('theme', () => {
 
     it('has a default state', () => {
-        const newState = theme(undefined, {type: 'some-action'});
+        const newState = theme(undefined, initAction());
         expect(newState).toEqual(defaultTheme);
     });
 

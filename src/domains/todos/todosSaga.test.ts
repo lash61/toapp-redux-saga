@@ -5,7 +5,7 @@ import {ITodo} from 'domains/todos/todosTypes';
 import {IAppState} from 'domains/types';
 import {IApiService} from 'service/api';
 
-import todosActions, {TodosActions} from './todosActions';
+import todosActions from './todosActions';
 
 import {loadTodos, updateTodoStatus} from './todosSaga';
 
@@ -56,10 +56,7 @@ describe('loadTodos', () => {
     it('executes scenario with a successful response for updateTodoStatus', async () => {
         const returnedTodos: ITodo[] = [];
         apiService.updateTodoStatus = jest.fn(() => Promise.resolve(returnedTodos));
-        const action = {
-            payload: 'some-id',
-            type: TodosActions.UPDATE_STATUS
-        };
+        const action = todosActions.updateTodoStatus('some-id');
 
         await runSaga(storeInterface, updateTodoStatus, apiService as IApiService, action).done;
 
@@ -72,11 +69,7 @@ describe('loadTodos', () => {
 
     it('executes scenario with a failed response for updateTodoStatus', async () => {
         apiService.updateTodoStatus = jest.fn(() => Promise.reject('Error!'));
-        const action = {
-            payload: 'some-id',
-            type: TodosActions.UPDATE_STATUS
-        };
-
+        const action = todosActions.updateTodoStatus('some-id');
         await runSaga(storeInterface, updateTodoStatus, apiService as IApiService, action).done;
 
         expect(apiService.updateTodoStatus).toHaveBeenCalledWith('some-id');

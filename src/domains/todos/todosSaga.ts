@@ -1,9 +1,10 @@
 import {AnyAction} from 'redux';
 import {all, call, put, takeLatest} from 'redux-saga/effects';
+import {getType} from 'typesafe-actions';
 
 import {IApiService} from 'service/api';
 import {IServiceMap} from 'service/services';
-import todosActions, {TodosActions} from './todosActions';
+import todosActions from './todosActions';
 
 export function* loadTodos(apiService: IApiService) {
     yield put(todosActions.loadTodosPending());
@@ -29,8 +30,8 @@ export function* updateTodoStatus(apiService: IApiService, action: AnyAction) {
 
 function* todosSaga(serviceMap: IServiceMap) {
     yield all([
-        takeLatest(TodosActions.LOAD_TODOS, loadTodos, serviceMap.apiService),
-        takeLatest(TodosActions.UPDATE_STATUS, updateTodoStatus, serviceMap.apiService),
+        takeLatest(getType(todosActions.loadTodos), loadTodos, serviceMap.apiService),
+        takeLatest(getType(todosActions.updateTodoStatus), updateTodoStatus, serviceMap.apiService),
     ]);
 
 }

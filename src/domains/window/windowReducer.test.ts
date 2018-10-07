@@ -1,4 +1,5 @@
 import {MediaType} from 'components/Styled/utils';
+import {initAction} from 'domains/rootReducer';
 
 import windowActions from './windowActions';
 import {mediaType, windowDimensions} from './windowReducer';
@@ -8,7 +9,7 @@ import {IWindowDimensions} from './windowTypes';
 describe('windowDimensions', () => {
 
     it('has default state', () => {
-        const newState = windowDimensions(undefined, {type: 'some-action'});
+        const newState = windowDimensions(undefined, initAction());
         expect(newState).toEqual({height: 0, width: 0});
     });
 
@@ -24,7 +25,7 @@ describe('windowDimensions', () => {
 describe('mediaType', () => {
 
     it('has default state', () => {
-        const newState = mediaType(undefined, {type: 'some-action'});
+        const newState = mediaType(undefined, initAction());
         expect(newState).toEqual(MediaType.MOBILE);
     });
 

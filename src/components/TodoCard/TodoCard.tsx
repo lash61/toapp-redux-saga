@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
-import {ActionCreator, AnyAction} from 'redux';
+import {PayloadAction} from 'typesafe-actions/dist/types';
 
 import todosActions from 'domains/todos/todosActions';
 import {ITodo} from 'domains/todos/todosTypes';
@@ -42,9 +42,9 @@ Goal.displayName = 'Goal';
 export interface IProps extends IHasMediaType {
     todo: ITodo;
     selectedTodoId: string;
-    index: number,
-    selectTodo: ActionCreator<AnyAction>;
-    updateTodoStatus: ActionCreator<AnyAction>
+    index: number;
+    selectTodo: (todoId: string) => PayloadAction<'todos/select-todo', string>;
+    updateTodoStatus: (todoId: string) => PayloadAction<'todo/update-status', string>;
 }
 
 export const TodoCard: React.SFC<IProps> = (props) => {
